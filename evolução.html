@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evolução</title>
+    <link rel="stylesheet" href="style/evolução_style.css">
+</head>
+<body>
+    <main>
+        <h1>Evolução</h1>
+                <p>Preencha os campos abaixo para registrar a evolução do paciente.</p>
+        <section>
+            <div>
+                <h2>Cabeçalho: </h2>
+                <form action="Cabeçalho">
+                    <label for="">Nome: </label>
+                    <input type="text" id="patientName" name="patientName" placeholder="Nome do Paciente" required>
+                    <label for="">Idade: </label>
+                    <input type="number" id="patientAge" name="patientAge" placeholder="Idade do Paciente" required>
+                    <label for="">Data: </label>
+                    <input type="date" id="evolutionDate" name="evolutionDate" required>
+                    <label for="">Leito: </label>
+                    <input type="text" id="patientBed" name="patientBed" placeholder="Leito do Paciente" required>
+                    <label for="">Hora: </label>
+                    <input type="time" id="evolutionTime" name="evolutionTime" required>
+                    <label for="">DIH: </label>
+                    <input type="number" id="dih" name="dih" placeholder="DIH do Paciente" required>
+                </form>
+            </div>
+        </section>
+        <section>
+            <div>
+                <form action="Neurológico">
+                    <div>
+                        <h2>Escala de Coma de Glasgow (ECG): </h2>
+                        <label for="pupilas">Pupílas: </label>
+                        <select name="" id="">
+                            <option value="isocóricas">Isocóricas</option>
+                            <option value="anisocóricas">Anisocóricas D>E</option>
+                            <option value="anisocóricas">Anisocóricas E>D</option>
+                            <option value="anisocóricas">Puntiforme</option>
+                            <option value="midriáticas">Midriáticas</option>
+                            <option value="mióticas">Mióticas</option>
+                        </select>
+                        <select name="" id="">
+                            <option value="reagem">Reagem</option>
+                            <option value="não reagem">Não Reagem</option>
+                        </select>
+                    </div>
+                    <div>
+                        <h2>Sedação: </h2>
+                        <label for="sedation">Sedação: </label>
+                        <select name="" id="">
+                            <option value="não sedado">Não Sedado</option>
+                            <option value="leve">Leve</option>
+                            <option value="moderado">Moderado</option>
+                            <option value="profundo">Profundo</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <section>
+            <div>
+                <form action="Respiratorio">
+                    <div>
+                        <h2>Respiratório</h2>
+                        <label for="frequenciarespiratoria">Frequência Respiratória: </label>
+                        <input type="number" id="fr" name="fr" placeholder="Frequência Respiratória" required>
+                        <label for="saturacao">Saturação: </label>
+                        <input type="number" id="saturacao" name="saturacao" placeholder="Saturação" required>
+                        <label for="ritmo">Ritmo: </label>
+                        <select name="" id="">
+                            <option value="eupneia">Eupneia</option>
+                            <option value="taquipnéia">Taquipnéia</option>
+                            <option value="bradipneia">Bradipneia</option>
+                            <option value="apneia">Apneia</option>
+                            <option value="dispneia">Dispneia</option>
+                            <option value="ortopneia">Ortopneia</option>
+                        </select>
+                        <label for="ventilação">Ventilação: </label>
+                        <select name="" id="">
+                            <option value="espontânea">Espontânea</option>
+                            <option value="assistida">Assistida</option>
+                            <option value="controlada">Controlada</option>
+                            <option value="tot">TOT*</option>
+                            <option value="tot">TQT*</option>
+                            <option value="tot">VNI*</option>
+                            <option value="tot">VMI*</option>
+                        </select>
+                        <label for="murmuriovesicular">Murmúrios Vesiculares Direito: </label>
+                        <select name="" id="">
+                            <option value="normal">Normal</option>
+                            <option value="diminuído">Diminuído</option>
+                            <option value="abolido">Abolido</option>
+                            <option value="aumentado">Aumentado</option>
+                        </select>
+                        <label for="murmuriovesicular">Murmúrios Vesiculares Esquerdo: </label>
+                        <select name="" id="">
+                            <option value="normal">Normal</option>
+                            <option value="diminuído">Diminuído</option>
+                            <option value="abolido">Abolido</option>
+                            <option value="aumentado">Aumentado</option>
+                        </select>
+                        <label for="auscutapulmonar">Auscuta Pulmonar: </label>
+                        <select name="" id="">
+                            <option value="normal">Normal</option>
+                            <option value="estertores">Estertores</option>
+                            <option value="roncos">Roncos</option>
+                            <option value="sibilos">Sibilos</option>
+                            <option value="frêmito">Frêmito</option>
+                            <option value="crepitações">Crepitações</option>
+                        </select>
+                        <label for="tosse">Tosse: </label>
+                        <select name="" id="">
+                            <option value="presenteprodutiva">Presente Produtiva</option>
+                            <option value="presenteimprodutiva">Presente Improdutiva</option>
+                            <option value="ausente">Ausente</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <section>
+            <div>
+                <form action="">
+                    <div>
+                        <h2>Cardiovascular: </h2>
+                        <label for="fc">Frequência Cardíaca: </label>
+                        <input type="number" id="fc" name="fc" placeholder="Frequência Cardíaca" required>
+                        <label for="pa">Pressão Arterial: </label>
+                        <input type="text" id="pa" name="pa" placeholder="Pressão Arterial" required>
+                        <label for="pulso">Pulso Periférico: </label>
+                        <select name="" id="">
+                            <option value="regular">Regular</option>
+                            <option value="ausente">Ausente</option>
+                            <option value="filiforme">Filiforme, ocluído por pressão leve</option>
+                            <option value="normal">Normal, não ocluído com pressão leve</option>
+                            <option value="forte">Pulso Forte</option>
+                        </select>
+                        <label for="perfusao">Perfusão Periférica: </label>
+                        <select name="" id="">
+                            <option value="normal">Normal</option>
+                            <option value="diminuida">Diminuída >2seg </option>
+                        </select>
+                        <label for="turgidezjugular">Turgidez Jugular: </label>
+                        <form action="">
+                            <input type="radio" id="turgidezJugularPresente" name="turgidezjugular"> Presente
+                            <input type="radio" id="turgidezJugularAusente" name="turgidezjugular"> Ausente
+                        </form>
+                        <label for="edema">Edema: </label>
+                        <select name="" id="">
+                            <option value="presente">+1, peq depressão no tecido</option>
+                            <option value="presente">+2, &#60;2segs</option>
+                            <option value="presente">+3, &#60;3segs</option>
+                            <option value="presente">+4, &#60;4segs</option>
+                            <option value="ausente">Ausente</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div>
+                <form action="">
+                    <div>
+                        <h2>Gastrointestinal: </h2>
+                        <label for="alimentação">Alimentação: </label>
+                        <select name="" id="">
+                            <option value="vo">Via Oral</option>
+                            <option value="sne">Sonda Nasoenteral</option>
+                            <option value="sng">Sonda Nasogástrica</option>
+                            <option value="soe">Sonda Oral Enteral</option>
+                            <option value="gastrostomia">Gastrostomia</option>
+                            <option value="jejunostomia">Jejunostomia</option>
+                            <option value="npt">Nutrição Parenteral</option>
+                        </select>
+                        <label for="abdomen">Abdomên: </label>
+                        <select name="" id="">
+                            <option value="globoso">Globoso</option>
+                            <option value="plano">Plano</option>
+                            <option value="escavado">Escavado</option>
+                            <option value="flacido">Flácido</option>
+                            <option value="depressivel">Depressível</option>
+                            <option value="endurecidotenso">Endurecido/Tenso</option>
+                        </select>
+                        <label for="ruidosintestinais">Ruidos Intestinais: </label>
+                        <select name="" id="">
+                            <option value="normais">Normais</option>
+                            <option value="aumentados">Aumentados</option>
+                            <option value="diminuídos">Diminuídos</option>
+                            <option value="ausentes">Ausentes</option>
+                        </select>
+                        <label for="dieta">Dieta: </label>
+                        <select name="" id="">
+                            <option value="boaaceitação">Boa Aceitação</option>
+                            <option value="aceitaçãoruim">Aceitação Ruim</option>
+                            <option value="nãoaceita">Não Aceita</option>
+                            <option value="distensãoabdominal">Distensão Abdominal</option>
+                            <option value="emese">Êmese</option>
+                        </select>
+                        <label for="incisãocirurgica">Incisão Cirúrgica: </label>
+                        <form action="">
+                            <input type="radio" id="incisaoCirurgicaPresente" name="incisaocirurgica" required> Presente
+                            <input type="radio" id="incisaoCirurgicaAusente" name="incisaocirurgica" required> Ausente
+                        </form>
+                        <input type="text" id="incisaoCirurgicaDescricao" name="incisaoCirurgicaDescricao" placeholder="Descrição da Incisão Cirúrgica">
+                        <label for="evacuacao">Evacuação: </label>
+                        <input type="text" id="evacuacao" name="evacuacao" placeholder="Evacuação do Paciente" required>
+                        <label for="diurese">Diurese: </label>
+                        <input type="text" id="diurese" name="diurese" placeholder="Diurese do Paciente" required>
+                    </div>
+                </form>
+            </div>
+            <div>
+                <form action="">
+                    <div>
+                        <h2>Renal: </h2>
+                        <label for="diurese">Diurese: </label>
+                        <select name="eliminações" id="">
+                            <option value="espontanea">Espontânea</option>
+                            <option value="svd">Sonda Vesical de Demora</option>
+                            <option value="retenção">Retenção</option>
+                            <option value="incontinencia">Incontinência</option>
+                            <option value="anuria">Anúria</option>
+                            <option value="oliguria">Oligúria</option>
+                            <option value="poliúria">Poliúria</option>
+                            <option value="dialise">Diálise</option>
+                        </select>
+                        <label for="tempodialise">Tempo da Diálise: </label>
+                        <input type="text" id="tempoDialise" name="tempoDialise" placeholder="Tempo da Diálise" required>
+                        <label for="quantidadediurese">Quantidade de Diurese: </label>
+                        <input type="number" id="quantidadeDiurese" name="quantidadeDiurese" placeholder="Quantidade de Diurese em mL" required>
+                        <label for="aspectourina">Aspecto da Urina: </label>
+                        <input type="text" id="aspectoUrina" name="aspectoUrina" placeholder="Aspecto da Urina" required>
+                    </div>
+                </form>
+            </div>
+            <div>
+                <form action="">
+                    <div>
+                        <h2>Sistema Tegumentar / Endócrino: </h2>
+                        <label for="glicemia">Glicemia Capilar: </label>
+                        <input type="number" id="glicemia" name="glicemia" placeholder="Glicemia Capilar" required>
+                        <label for="temperatura">Temperatura: </label>
+                        <input type="number" id="temperatura" name="temperatura" placeholder="Temperatura em °C" required>
+                        <form action="">
+                            <label for="extremidade">Extremidades: </label>
+                            <input type="radio" id="extremidadeFria" name="extremidade" required> Hipotérmica
+                            <input type="radio" id="extremidadeQuente" name="extremidade" required> Aquecida
+                        </form>
+                        <form action="">
+                            <label for="cor">Cor: </label>
+                            <input type="radio" id="corNormal" name="cor" required> Corada
+                            <input type="radio" id="corPálida" name="cor" required> Hipocorada
+                            <input type="radio" id="corCianótica" name="cor" required> Cianótica
+                            <input type="radio" id="corIcterícia" name="cor" required> Icterícia
+                            <input type="radio" id="corEritema" name="cor" required> Eritema
+                        </form>
+                        <label for="escaladebranden">Escala de Branden: </label>
+                        <select name="" id="">
+                            <option value="0">0 - Sem Risco</option>
+                            <option value="1">1 - Baixo Risco</option>
+                            <option value="2">2 - Moderado Risco</option>
+                            <option value="3">3 - Alto Risco</option>
+                            <option value="4">4 - Muito Alto Risco</option>
+                        </select>
+                        <label for="locallesãoporpressão">Local da Lesão por Pressão: </label>
+                        <input type="text" id="localLesaoPressao" name="localLesaoPressao" placeholder="Local da Lesão por Pressão">
+                        <label for="estagio">Estágio da Lesão por Pressão: </label>
+                        <select name="" id="">
+                            <option value="0">0 - Sem Lesão</option>
+                            <option value="1">1 - Eritema Não Desaparece</option>
+                            <option value="2">2 - Perda Parcial da Espessura da Pele</option>
+                            <option value="3">3 - Perda Total da Espessura da Pele</option>
+                            <option value="4">4 - Lesão Extensa com Exposição Óssea/Muscular</option>
+                            <option value="5">5 - Lesão Não Classificável</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div>
+                <form action="">
+                    <div>
+                        <h2>Riscos: </h2>
+                        <label><input type="checkbox" name="riscoQueda" value="queda"> Queda</label>
+                        <label><input type="checkbox" name="riscoQueda" value="queda"> Flebite</label>
+                        <label><input type="checkbox" name="riscoQueda" value="queda"> TEV</label>
+                        <label><input type="checkbox" name="riscoLesaoPressao" value="lesaoPressao"> Lesão por Pressão</label>
+                        <label><input type="checkbox" name="riscoInfecao" value="infeccao"> Infecção</label>
+                        <label><input type="checkbox" name="riscoBroncoaspiracao" value="broncoaspiracao"> Broncoaspiração</label>
+                        <label><input type="checkbox" name="riscoFuga" value="fuga"> Fuga</label>
+                        <label><input type="checkbox" name="riscoAutoextermínio" value="autoexterminio"> Autoextermínio</label>
+                        <label><input type="checkbox" name="riscoOutros" value="outros"> Outros</label>
+                        <input type="text" name="descricaoRiscoOutros" placeholder="Descreva outros riscos">
+                        <input type="text" name="conduta" placeholder="Descreva a conduta adotada">
+                    </div>
+                </form>
+            </div>
+            <div>
+                <form action="">
+                    <div>
+                        <h2>Curativos: </h2>
+                        <label for="tipodeferida">Tipo de Ferida: </label>
+                        <select name="" id="">
+                            <option value="incisao_cirurgica">Incisão Cirúrgica</option>
+                            <option value="lesao_pressao">Lesão por Pressão</option>
+                            <option value="ulcera_venosa">Úlcera Venosa</option>
+                            <option value="ulcera_arterial">Úlcera Arterial</option>
+                            <option value="ulcera_neuropatica">Úlcera Neuropática</option>
+                            <option value="queimadura">Queimadura</option>
+                            <option value="ferida_traumatica">Ferida Traumática</option>
+                            <option value="ferida_infectada">Ferida Infectada</option>
+                            <option value="ferida_neoplasica">Ferida Neoplásica</option>
+                            <option value="outros">Outros</option>
+                        </select>
+                        <label for="aspectodaferida">Aspecto da Ferida: </label>
+                        <input type="text" id="aspectoferida" placeholder="Descreva o aspecto encontrado">
+                        <label for="materialutilizado">Materiais Utilizados: </label>
+                        <input type="text" id="materiaisutilizados" placeholder="Gaze, SF0,9%...">
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
