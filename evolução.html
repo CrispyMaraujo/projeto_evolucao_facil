@@ -10,115 +10,130 @@
     <main>
         <h1>Evolução</h1>
                 <p>Preencha os campos abaixo para registrar a evolução do paciente.</p>
-        <section>
-            <div>
+        <section id="cabecalhoSection">
+            <div id="cabecalhoDiv">
                 <h2>Cabeçalho: </h2>
-                <form action="Cabeçalho">
-                    <label for="">Nome: </label>
+                <form action="cabecalho">
+                    <label for="nome">Nome: </label>
                     <input type="text" id="patientName" name="patientName" placeholder="Nome do Paciente" required>
-                    <label for="">Idade: </label>
+                    <label for="idade">Idade: </label>
                     <input type="number" id="patientAge" name="patientAge" placeholder="Idade do Paciente" required>
-                    <label for="">Data: </label>
+                    <label for="dateevolucao">Data: </label>
                     <input type="date" id="evolutionDate" name="evolutionDate" required>
-                    <label for="">Leito: </label>
+                    <label for="numeroleito">Leito: </label>
                     <input type="text" id="patientBed" name="patientBed" placeholder="Leito do Paciente" required>
-                    <label for="">Hora: </label>
+                    <label for="horaevolucao">Hora: </label>
                     <input type="time" id="evolutionTime" name="evolutionTime" required>
-                    <label for="">DIH: </label>
+                    <label for="dih">DIH: </label>
                     <input type="number" id="dih" name="dih" placeholder="DIH do Paciente" required>
                 </form>
             </div>
         </section>
-        <section>
-            <div>
-                <form action="Neurológico">
-                    <div>
+        <section id="neurologicoSection">
+            <div id="neurologicoDiv">
+                <form action="Neurológico" id="neurologicoForm">
+                    <div id="escalaDeComaDeGlasgow">
                         <h2>Escala de Coma de Glasgow (ECG): </h2>
-                        <label for="pupilas">Pupílas: </label>
-                        <select name="" id="">
-                            <option value="isocóricas">Isocóricas</option>
-                            <option value="anisocóricas">Anisocóricas D>E</option>
-                            <option value="anisocóricas">Anisocóricas E>D</option>
-                            <option value="anisocóricas">Puntiforme</option>
-                            <option value="midriáticas">Midriáticas</option>
-                            <option value="mióticas">Mióticas</option>
-                        </select>
-                        <select name="" id="">
-                            <option value="reagem">Reagem</option>
-                            <option value="não reagem">Não Reagem</option>
-                        </select>
+                        <form action="">
+                            <label for="pupilas">Pupílas: </label>
+                            <select name="avaliacaoPupilar" id="avaliacaoPupilar">
+                                <option value="isocóricas">Isocóricas</option>
+                                <option value="anisocóricas">Anisocóricas D>E</option>
+                                <option value="anisocóricas">Anisocóricas E>D</option>
+                                <option value="anisocóricas">Puntiforme</option>
+                                <option value="midriáticas">Midriáticas</option>
+                                <option value="mióticas">Mióticas</option>
+                            </select>
+                        </form>
+                        <form action="">
+                            <select name="reacaoPupilar" id="reacaoPupilar">
+                                <option value="reagem">Reagem</option>
+                                <option value="não reagem">Não Reagem</option>
+                            </select>
+                        </form>
                     </div>
-                    <div>
+                    <div id="sedacaoDiv">
                         <h2>Sedação: </h2>
-                        <label for="sedation">Sedação: </label>
-                        <select name="" id="">
-                            <option value="não sedado">Não Sedado</option>
-                            <option value="leve">Leve</option>
-                            <option value="moderado">Moderado</option>
-                            <option value="profundo">Profundo</option>
-                        </select>
+                        <form action="">
+                            <label for="sedation">Sedação: </label>
+                            <select name="" id="">
+                                <option value="não sedado">Não Sedado</option>
+                                <option value="leve">Leve</option>
+                                <option value="moderado">Moderado</option>
+                                <option value="profundo">Profundo</option>
+                            </select>
+                        </form>
                     </div>
-                </form>
             </div>
         </section>
-        <section>
-            <div>
-                <form action="Respiratorio">
-                    <div>
-                        <h2>Respiratório</h2>
-                        <label for="frequenciarespiratoria">Frequência Respiratória: </label>
-                        <input type="number" id="fr" name="fr" placeholder="Frequência Respiratória" required>
-                        <label for="saturacao">Saturação: </label>
-                        <input type="number" id="saturacao" name="saturacao" placeholder="Saturação" required>
-                        <label for="ritmo">Ritmo: </label>
-                        <select name="" id="">
-                            <option value="eupneia">Eupneia</option>
-                            <option value="taquipnéia">Taquipnéia</option>
-                            <option value="bradipneia">Bradipneia</option>
-                            <option value="apneia">Apneia</option>
-                            <option value="dispneia">Dispneia</option>
-                            <option value="ortopneia">Ortopneia</option>
-                        </select>
-                        <label for="ventilação">Ventilação: </label>
-                        <select name="" id="">
-                            <option value="espontânea">Espontânea</option>
-                            <option value="assistida">Assistida</option>
-                            <option value="controlada">Controlada</option>
-                            <option value="tot">TOT*</option>
-                            <option value="tot">TQT*</option>
-                            <option value="tot">VNI*</option>
-                            <option value="tot">VMI*</option>
-                        </select>
-                        <label for="murmuriovesicular">Murmúrios Vesiculares Direito: </label>
-                        <select name="" id="">
-                            <option value="normal">Normal</option>
-                            <option value="diminuído">Diminuído</option>
-                            <option value="abolido">Abolido</option>
-                            <option value="aumentado">Aumentado</option>
-                        </select>
-                        <label for="murmuriovesicular">Murmúrios Vesiculares Esquerdo: </label>
-                        <select name="" id="">
-                            <option value="normal">Normal</option>
-                            <option value="diminuído">Diminuído</option>
-                            <option value="abolido">Abolido</option>
-                            <option value="aumentado">Aumentado</option>
-                        </select>
-                        <label for="auscutapulmonar">Auscuta Pulmonar: </label>
-                        <select name="" id="">
-                            <option value="normal">Normal</option>
-                            <option value="estertores">Estertores</option>
-                            <option value="roncos">Roncos</option>
-                            <option value="sibilos">Sibilos</option>
-                            <option value="frêmito">Frêmito</option>
-                            <option value="crepitações">Crepitações</option>
-                        </select>
+        <section id="respiratorioSection">
+            <div id="respiratorioDiv">
+                <h2>Respiratório</h2>
+                <form action="respiratorio">                        
+                    <label for="frequenciarespiratoria">Frequência Respiratória: </label>
+                    <input type="number" id="fr" name="fr" placeholder="Frequência Respiratória" required>
+                    <label for="saturacao">Saturação: </label>
+                    <input type="number" id="saturacao" name="saturacao" placeholder="Saturação" required>
+                </form>
+                <form action="">
+                    <label for="ritmo">Ritmo: </label>
+                    <select name="" id="">
+                        <option value="eupneia">Eupneia</option>
+                        <option value="taquipnéia">Taquipnéia</option>
+                        <option value="bradipneia">Bradipneia</option>
+                        <option value="apneia">Apneia</option>
+                        <option value="dispneia">Dispneia</option>
+                        <option value="ortopneia">Ortopneia</option>
+                    </select>
+                </form>
+                <form action="">
+                    <label for="ventilação">Ventilação: </label>
+                    <select name="" id="">
+                        <option value="espontânea">Espontânea</option>
+                        <option value="assistida">Assistida</option>
+                        <option value="controlada">Controlada</option>
+                        <option value="tot">TOT*</option>
+                        <option value="tot">TQT*</option>
+                        <option value="tot">VNI*</option>
+                        <option value="tot">VMI*</option>
+                    </select>
+                </form>
+                <form action="">
+                    <label for="murmuriovesicular">Murmúrios Vesiculares Direito: </label>
+                    <select name="" id="">
+                        <option value="normal">Normal</option>
+                        <option value="diminuído">Diminuído</option>
+                        <option value="abolido">Abolido</option>
+                        <option value="aumentado">Aumentado</option>
+                    </select>
+                </form>
+                <form action="">
+                    <label for="murmuriovesicular">Murmúrios Vesiculares Esquerdo: </label>
+                    <select name="" id="">
+                        <option value="normal">Normal</option>
+                        <option value="diminuído">Diminuído</option>
+                        <option value="abolido">Abolido</option>
+                        <option value="aumentado">Aumentado</option>
+                    </select>
+                </form>
+                <form action="">
+                    <label for="auscutapulmonar">Auscuta Pulmonar: </label>
+                    <select name="" id="">
+                        <option value="normal">Normal</option>
+                        <option value="estertores">Estertores</option>
+                        <option value="roncos">Roncos</option>
+                        <option value="sibilos">Sibilos</option>
+                        <option value="frêmito">Frêmito</option>
+                        <option value="crepitações">Crepitações</option>
+                    </select>
+                </form>
+                <form action="">
                         <label for="tosse">Tosse: </label>
                         <select name="" id="">
                             <option value="presenteprodutiva">Presente Produtiva</option>
                             <option value="presenteimprodutiva">Presente Improdutiva</option>
                             <option value="ausente">Ausente</option>
                         </select>
-                    </div>
                 </form>
             </div>
         </section>
