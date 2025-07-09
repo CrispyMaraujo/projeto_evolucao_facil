@@ -26,6 +26,8 @@
                     <input type="time" id="evolutionTime" name="evolutionTime" required>
                     <label for="dih">DIH: </label>
                     <input type="number" id="dih" name="dih" placeholder="DIH do Paciente" required>
+                    <label for="Ala">Ala: </label>
+                    <input type="text" name="ala" placeholder="Enfermaria, Centro Cirúrgico..." id="alaPaciente">
                 </form>
             </div>
         </section>
@@ -36,26 +38,26 @@
                             <h2>Escala de Coma de Glasgow (ECG): </h2>
                                 <label for="pupilas">Pupílas: </label>
                                 <select name="avaliacaoPupilar" id="avaliacaoPupilar">
-                                    <option value="isocoricas">Isocóricas</option>
-                                    <option value="anisocoricade">Anisocóricas D>E</option>
-                                    <option value="anisocoricaed">Anisocóricas E>D</option>
-                                    <option value="puntiforme">Puntiforme</option>
-                                    <option value="midriaticas">Midriáticas</option>
-                                    <option value="mioticas">Mióticas</option>
+                                    <option value="isocóricas">Isocóricas</option>
+                                    <option value="Anisocóricas com D>E">Anisocóricas D>E</option>
+                                    <option value="Anisocóricas com E>D">Anisocóricas E>D</option>
+                                    <option value="Puntiformes">Puntiformes</option>
+                                    <option value="Midriáticas">Midriáticas</option>
+                                    <option value="Mióticas">Mióticas</option>
                                 </select>
                                 <select name="reacaoPupilar" id="reacaoPupilar">
-                                    <option value="reagem">Reagem</option>
-                                    <option value="naoreagem">Não Reagem</option>
+                                    <option value="fotorreagentes">Fotorreagentes</option>
+                                    <option value="sem reação a luz estimulante">Não Reagem</option>
                                 </select>
                         </div>
                         <div id="sedacaoDiv">
                             <h2>Sedação: </h2>
                                 <label for="sedation">Sedação: </label>
                                 <select name="avaliacaoSedacao" id="avaliacaoSedacao">
-                                    <option value="naosedado">Não Sedado</option>
-                                    <option value="leve">Leve</option>
-                                    <option value="moderado">Moderado</option>
-                                    <option value="profundo">Profundo</option>
+                                    <option value="não sedado">Não Sedado</option>
+                                    <option value="com sedação leve">Leve</option>
+                                    <option value="com sedação moderada">Moderado</option>
+                                    <option value="com sedação profunda">Profundo</option>
                                 </select>
                     </div>
                 </div>
@@ -68,7 +70,7 @@
                         <label for="saturacao">Saturação: </label>
                         <input type="number" id="saturacao" name="saturacao" placeholder="Saturação" required>
                         <label for="ritmo">Ritmo: </label>
-                        <select name="" id="">
+                        <select name="ritmoRespiratorio" id="ritmoRespiratorio">
                             <option value="eupneia">Eupneia</option>
                             <option value="taquipneia">Taquipnéia</option>
                             <option value="bradipneia">Bradipneia</option>
@@ -78,13 +80,13 @@
                         </select>
                         <label for="ventilacao">Ventilação: </label>
                         <select name="avaliacaoVentilacao" id="avaliacaoVentilacao">
-                            <option value="espontanea">Espontânea</option>
-                            <option value="assistida">Assistida</option>
-                            <option value="controlada">Controlada</option>
-                            <option value="tot">TOT*</option>
-                            <option value="tqt">TQT*</option>
-                            <option value="vni">VNI*</option>
-                            <option value="vmi">VMI*</option>
+                            <option value="ar Ambiente">Espontânea</option>
+                            <option value="Ventilação Assistida">Assistida</option>
+                            <option value="Ventilação Controlada">Controlada</option>
+                            <option value="TOT">TOT*</option>
+                            <option value="TQT">TQT*</option>
+                            <option value="VNI">VNI*</option>
+                            <option value="VMI">VMI*</option>
                         </select>
                         <label for="murmurioVesicularDireito">Murmúrios Vesiculares Direito: </label>
                         <select name="murmurioVesicularDireito" id="murmurioVesicularDireito">
@@ -93,7 +95,7 @@
                             <option value="abolido">Abolido</option>
                             <option value="aumentado">Aumentado</option>
                         </select>
-                        <label for="murmurioVesicularEsquedo">Murmúrios Vesiculares Esquerdo: </label>
+                        <label for="murmurioVesicularEsquerdo">Murmúrios Vesiculares Esquerdo: </label>
                         <select name="murmurioVesicularEsquedo" id="murmurioVesicularEsquedo">
                             <option value="normal">Normal</option>
                             <option value="diminuido">Diminuído</option>
@@ -103,16 +105,16 @@
                         <label for="auscutaPulmonar">Auscuta Pulmonar: </label>
                         <select name="auscutaPulmonar" id="auscutaPulmonar">
                             <option value="normal">Normal</option>
-                            <option value="estertores">Estertores</option>
-                            <option value="roncos">Roncos</option>
-                            <option value="sibilos">Sibilos</option>
-                            <option value="fremito">Frêmito</option>
-                            <option value="crepitacoes">Crepitações</option>
+                            <option value="de estertores">Estertores</option>
+                            <option value="de roncos">Roncos</option>
+                            <option value="de sibilos">Sibilos</option>
+                            <option value="de frêmito">Frêmito</option>
+                            <option value="de crepitações">Crepitações</option>
                         </select>
                             <label for="avaliacaoTosse">Tosse: </label>
                             <select name="avaliacaoTosse" id="avaliacaoTosse">
-                                <option value="presenteprodutiva">Presente Produtiva</option>
-                                <option value="presenteimprodutiva">Presente Improdutiva</option>
+                                <option value="presente e produtiva">Presente Produtiva</option>
+                                <option value="presente e seca">Presente Seca</option>
                                 <option value="ausente">Ausente</option>
                             </select>
                 </div>
@@ -127,27 +129,29 @@
                             <input type="text" id="pressaoArterial" name="pressaoArterial" placeholder="Pressão Arterial" required>
                             <label for="pulsoPeriferico">Pulso Periférico: </label>
                             <select name="pulsoPeriferico" id="pulsoPeriferico">
-                                <option value="pulsoRegular">Pulso Regular</option>
-                                <option value="pulsoAusente">Pulso Ausente</option>
-                                <option value="pulsoFiliforme">Pulso Filiforme, ocluído por pressão leve</option>
-                                <option value="pulsoNormal">Pulso Normal, não ocluído com pressão leve</option>
-                                <option value="pulsoForte">Pulso Forte</option>
+                                <option value="Regular, porém ocluído com pressão leve">Pulso Regular</option>
+                                <option value="Ausente">Pulso Ausente</option>
+                                <option value="Filiforme">Pulso Filiforme, ocluído por pressão leve</option>
+                                <option value="Normal">Pulso Normal, não ocluído com pressão leve</option>
+                                <option value="Forte">Pulso Forte</option>
                             </select>
                             <label for="perfusaoPeriferica">Perfusão Periférica: </label>
                             <select name="perfusaoPeriferica" id="perfusaoPeriferica">
-                                <option value="normal">Normal</option>
-                                <option value="diminuida">Diminuída >2seg </option>
+                                <option value="normal (< 2 segundos)">Normal</option>
+                                <option value="diminuida (> 2 segundos)">Diminuída >2seg </option>
                             </select>
-                            <label for="turgidezjugular">Turgidez Jugular: </label>
-                                <input type="radio" id="turgidezJugularPresente" name="turgidezjugular"> Presente
-                                <input type="radio" id="turgidezJugularAusente" name="turgidezjugular"> ausente
+                            <label for="turgidezJugular">Turgidez Jugular: </label>
+
+                                    <input type="radio" id="turgidezJugularPresente" name="turgidezJugular" value="Turgidez Jugular Presente"> Presente
+                                    <input type="radio" id="turgidezJugularAusente" name="turgidezJugular" value="Turgidez Jugular Ausente"> ausente
+
                             <label for="avaliacaoEdema">Edema: </label>
                             <select name="avaliacaoEdema" id="avaliacaoEdema">
-                                <option value="presente1">+1, peq depressão no tecido</option>
-                                <option value="presente2">+2, &#60;2segs</option>
-                                <option value="presente3">+3, &#60;3segs</option>
-                                <option value="presente4">+4, &#60;4segs</option>
-                                <option value="edemaAusente">Ausente</option>
+                                <option value="edema presente +/++++">+1, peq depressão no tecido</option>
+                                <option value="edema presente ++/++++">+2, &#60;2segs</option>
+                                <option value="edema presente +++/++++">+3, &#60;3segs</option>
+                                <option value="edema presente ++++/++++">+4, &#60;4segs</option>
+                                <option value="edema ausente">Ausente</option>
                             </select>
                         </div>
                 </div>
@@ -155,36 +159,38 @@
                         <div>
                             <h2>Gastrointestinal: </h2>
                             <label for="avaliacaoAlimentação">Alimentação: </label>
-                            <select name="avaliacaoAlimentação" id="avaliacaoAlimentação">
-                                <option value="viaOral">Via Oral</option>
-                                <option value="sondaNasoEnteral">Sonda Nasoenteral</option>
-                                <option value="sondaNasoGastrica">Sonda Nasogástrica</option>
-                                <option value="sondaOralEnteral">Sonda Oral Enteral</option>
+                            <select name="avaliacaoAlimentação" id="avaliacaoAlimentacao">
+                                <option value="via Oral">Via Oral</option>
+                                <option value="sonda NasoEnteral">Sonda Nasoenteral</option>
+                                <option value="sonda NasoGastrica">Sonda Nasogástrica</option>
+                                <option value="sonda OralEnteral">Sonda Oral Enteral</option>
                                 <option value="gastrostomia">Gastrostomia</option>
                                 <option value="jejunostomia">Jejunostomia</option>
-                                <option value="nutricaoParenteral">Nutrição Parenteral</option>
+                                <option value="nutrição Parenteral">Nutrição Parenteral</option>
                             </select>
                             <label for="avaliacaoAbdomen">Abdomên: </label>
-                            <input type="checkbox" value="abdomenGloboso">Globoso
-                            <input type="checkbox" value="abdomenPlano">Plano
-                            <input type="checkbox" value="abdomenEscavado">Escavado
-                            <input type="checkbox" value="abdomenFlacido">Flácido
-                            <input type="checkbox" value="abdomenDepressivel">Depressível
-                            <input type="checkbox" value="abdomenEndurecidotenso">Endurecido/Tenso
+                            
+                                <input name="avaliacaoAbdomen1" id="avaliacaoAbdomen" type="checkbox" value="abdomên globoso">Globoso
+                                <input id="avaliacaoAbdomen2" name="avaliacaoAbdomen" type="checkbox" value="abdomên plano">Plano
+                                <input id="avaliacaoAbdomen3" name="avaliacaoAbdomen" type="checkbox" value="abdomên escavado">Escavado
+                                <input id="avaliacaoAbdomen4" name="avaliacaoAbdomen" type="checkbox" value="abdomên flácido">Flácido
+                                <input id="avaliacaoAbdomen5" name="avaliacaoAbdomen" type="checkbox" value="abdomên depressível">Depressível
+                                <input id="avaliacaoAbdomen6" name="avaliacaoAbdomen" type="checkbox" value="abdomên endurecido/tenso">Endurecido/Tenso
+
                             <label for="ruidosIntestinais">Ruidos Intestinais: </label>
                             <select name="ruidosIntestinais" id="ruidosIntestinais">
-                                <option value="ruidosNormais">Normais</option>
-                                <option value="ruidosAumentados">Aumentados</option>
-                                <option value="ruidosDiminuidos">Diminuídos</option>
-                                <option value="ruidosAusentes">Ausentes</option>
+                                <option value="presente e normais">Normais</option>
+                                <option value="presentes e aumentados">Aumentados</option>
+                                <option value="presentes mas diminuídos">Diminuídos</option>
+                                <option value="Ausentes">Ausentes</option>
                             </select>
                             <label for="avaliacaoDieta">Dieta: </label>
                             <select name="avaliacaoDieta" id="avaliacaoDieta">
-                                <option value="boaAceitacao">Boa Aceitação</option>
-                                <option value="aceitacaoRuim">Aceitação Ruim</option>
-                                <option value="naoAceita">Não Aceita</option>
-                                <option value="distensaoAbdominal">Distensão Abdominal</option>
-                                <option value="apresentaEmese">Êmese</option>
+                                <option value="com boa aceitação">Boa Aceitação</option>
+                                <option value="com aceitação ruim">Aceitação Ruim</option>
+                                <option value="não aceita">Não Aceita</option>
+                                <option value="com distensão abdominal">Distensão Abdominal</option>
+                                <option value="apresenta êmese">Êmese</option>
                             </select>
                             <label for="incisaoCirurgica">Incisão Cirúrgica: </label>
                                 <input type="radio" id="incisaoCirurgicaPresente" name="incisaocirurgica" required> Presente
