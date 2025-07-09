@@ -96,7 +96,7 @@
                             <option value="aumentado">Aumentado</option>
                         </select>
                         <label for="murmurioVesicularEsquerdo">Murmúrios Vesiculares Esquerdo: </label>
-                        <select name="murmurioVesicularEsquedo" id="murmurioVesicularEsquedo">
+                        <select name="murmurioVesicularEsquerdo" id="murmurioVesicularEsquerdo">
                             <option value="normal">Normal</option>
                             <option value="diminuido">Diminuído</option>
                             <option value="abolido">Abolido</option>
@@ -140,7 +140,7 @@
                                 <option value="normal (< 2 segundos)">Normal</option>
                                 <option value="diminuida (> 2 segundos)">Diminuída >2seg </option>
                             </select>
-                            <label for="turgidezJugular">Turgidez Jugular: </label>
+                            <label for="turgidezjugular">Turgidez Jugular: </label>
 
                                     <input type="radio" id="turgidezJugularPresente" name="turgidezJugular" value="Turgidez Jugular Presente"> Presente
                                     <input type="radio" id="turgidezJugularAusente" name="turgidezJugular" value="Turgidez Jugular Ausente"> ausente
@@ -159,7 +159,7 @@
                         <div>
                             <h2>Gastrointestinal: </h2>
                             <label for="avaliacaoAlimentação">Alimentação: </label>
-                            <select name="avaliacaoAlimentação" id="avaliacaoAlimentacao">
+                            <select name="avaliacaoAlimentacao" id="avaliacaoAlimentacao">
                                 <option value="via Oral">Via Oral</option>
                                 <option value="sonda NasoEnteral">Sonda Nasoenteral</option>
                                 <option value="sonda NasoGastrica">Sonda Nasogástrica</option>
@@ -170,12 +170,12 @@
                             </select>
                             <label for="avaliacaoAbdomen">Abdomên: </label>
                             
-                                <input name="avaliacaoAbdomen1" id="avaliacaoAbdomen" type="checkbox" value="abdomên globoso">Globoso
-                                <input id="avaliacaoAbdomen2" name="avaliacaoAbdomen" type="checkbox" value="abdomên plano">Plano
-                                <input id="avaliacaoAbdomen3" name="avaliacaoAbdomen" type="checkbox" value="abdomên escavado">Escavado
-                                <input id="avaliacaoAbdomen4" name="avaliacaoAbdomen" type="checkbox" value="abdomên flácido">Flácido
-                                <input id="avaliacaoAbdomen5" name="avaliacaoAbdomen" type="checkbox" value="abdomên depressível">Depressível
-                                <input id="avaliacaoAbdomen6" name="avaliacaoAbdomen" type="checkbox" value="abdomên endurecido/tenso">Endurecido/Tenso
+                                <input name="avaliacaoAbdomen" id="avaliacaoAbdomen1" type="checkbox" value="globoso">Globoso
+                                <input id="avaliacaoAbdomen2" name="avaliacaoAbdomen" type="checkbox" value="plano">Plano
+                                <input id="avaliacaoAbdomen3" name="avaliacaoAbdomen" type="checkbox" value="escavado">Escavado
+                                <input id="avaliacaoAbdomen4" name="avaliacaoAbdomen" type="checkbox" value="flácido">Flácido
+                                <input id="avaliacaoAbdomen5" name="avaliacaoAbdomen" type="checkbox" value="depressível">Depressível
+                                <input id="avaliacaoAbdomen6" name="avaliacaoAbdomen" type="checkbox" value="endurecido/tenso">Endurecido/Tenso
 
                             <label for="ruidosIntestinais">Ruidos Intestinais: </label>
                             <select name="ruidosIntestinais" id="ruidosIntestinais">
@@ -193,13 +193,12 @@
                                 <option value="apresenta êmese">Êmese</option>
                             </select>
                             <label for="incisaoCirurgica">Incisão Cirúrgica: </label>
-                                <input type="radio" id="incisaoCirurgicaPresente" name="incisaocirurgica" required> Presente
-                                <input type="radio" id="incisaoCirurgicaAusente" name="incisaocirurgica" required> Ausente
+                                <input type="radio" id="incisaoCirurgicaPresente" name="incisaoCirurgica" value="incisão cirúrgica presente na região"> Presente
+                                <input type="radio" id="incisaoCirurgicaAusente" name="incisaoCirurgica" value="incisão cirúrgica ausente na região"> Ausente
                             <input type="text" id="incisaoCirurgicaDescricao" name="incisaoCirurgicaDescricao" placeholder="Descrição da Incisão Cirúrgica">
                             <label for="evacuacao">Evacuação: </label>
-                            <input type="text" id="evacuacao" name="evacuacao" placeholder="Evacuação do Paciente">
-                            <label for="diurese">Diurese: </label>
-                            <input type="text" id="diurese" name="diurese" placeholder="Diurese do Paciente">
+                            <input type="radio" id="evacuacaoPresente" name="evacuacao" value="presente"> Presente
+                            <input type="radio" id="evacuacaoAusente" name="evacuacao" value="ausente"> Ausente
                         </div>
                 </div>
                 <div>
@@ -207,51 +206,48 @@
                             <h2>Renal: </h2>
                             <label for="diurese">Diurese: </label>
                             <select name="eliminacoesDiurese" id="eliminacoesDiurese">
-                                <option value="diureseEspontanea">Espontânea</option>
-                                <option value="sondaVesicalDeDemora">Sonda Vesical de Demora</option>
-                                <option value="retencaoDeUrina">Retenção</option>
-                                <option value="incontinencia">Incontinência</option>
-                                <option value="anuria">Anúria</option>
-                                <option value="oliguria">Oligúria</option>
-                                <option value="poliuria">Poliúria</option>
-                                <option value="dialise">Diálise</option>
+                                <option value="espontânea">Espontânea</option>
+                                <option value="por Sonda Vesical de Demora">Sonda Vesical de Demora</option>
+                                <option value="em retencao de urina">Retenção</option>
+                                <option value="com incontinência">Incontinência</option>
+                                <option value="com presença de anúria">Anúria</option>
+                                <option value="com presença de oligúria">Oligúria</option>
+                                <option value="com presença de poliúria">Poliúria</option>
+                                <option value="por diálise">Diálise</option>
                             </select>
                             <label for="tempodialise">Tempo da Diálise: </label>
-                            <input type="text" id="tempoDialise" name="tempoDialise" placeholder="Tempo da Diálise">
+                            <input type="text" id="tempoDialise" name="tempoDialise" placeholder="em X horas">
                             <label for="quantidaDeDiurese">Quantidade de Diurese: </label>
                             <input type="number" id="quantidaDeDiurese" name="quantidaDeDiurese" placeholder="Quantidade de Diurese em mL">
                             <label for="aspectourina">Aspecto da Urina: </label>
-                            <input type="text" id="aspectoUrina" name="aspectoUrina" placeholder="Aspecto da Urina">
+                            <input type="text" id="aspectoUrina" name="aspectoUrina" placeholder="amarelo e límpido...">
                         </div>
                 </div>
                 <div>
                         <div>
                             <h2>Sistema Tegumentar / Endócrino: </h2>
                             <label for="glicemia">Glicemia Capilar: </label>
-                            <input type="number" id="glicemia" name="glicemia" placeholder="Glicemia Capilar" required>
+                            <input type="number" id="glicemia" name="glicemia" placeholder="145" required>
                             <label for="temperatura">Temperatura: </label>
-                            <input type="number" id="temperatura" name="temperatura" placeholder="Temperatura em °C" required>
-                            <form action="">
+                            <input type="number" id="temperatura" name="temperatura" placeholder="36,7" required>
                                 <label for="extremidade">Extremidades: </label>
                                 <input type="radio" id="extremidadeFria" name="extremidade" required> Hipotérmica
                                 <input type="radio" id="extremidadeQuente" name="extremidade" required> Aquecida
-                            </form>
-                            <form action="">
                                 <label for="cor">Cor: </label>
-                                <input type="radio" id="corNormal" name="cor" required> Corada
-                                <input type="radio" id="corPálida" name="cor" required> Hipocorada
-                                <input type="radio" id="corCianótica" name="cor" required> Cianótica
-                                <input type="radio" id="corIcterícia" name="cor" required> Icterícia
-                                <input type="radio" id="corEritema" name="cor" required> Eritema
-                            </form>
-                            <label for="escaladebranden">Escala de Branden: </label>
-                            <select name="" id="">
-                                <option value="0">0 - Sem Risco</option>
-                                <option value="1">1 - Baixo Risco</option>
-                                <option value="2">2 - Moderado Risco</option>
-                                <option value="3">3 - Alto Risco</option>
-                                <option value="4">4 - Muito Alto Risco</option>
+                                <input type="radio" id="corNormal" name="cor" value="corado"> Corado
+                                <input type="radio" id="corPálida" name="cor" value="hipocorado"> Hipocorado
+                                <input type="radio" id="corCianótica" name="cor" value="cianótico"> Cianótico
+                                <input type="radio" id="corIcterícia" name="cor" value="ictérico"> Icterícia
+                                <input type="radio" id="corEritema" name="cor" value="com presença de eritema"> Eritema
+                            <label for="escalaDeBranden">Escala de Branden: </label>
+                            <select name="escalaDeBranden" id="escalaDeBranden">
+                                <option value="0, (Sem Risco de Lesão Por Pressão/Atríto)">0 - Sem Risco</option>
+                                <option value="1, (Baixo Risco de Lesão Por Pressão/Atríto)">1 - Baixo Risco</option>
+                                <option value="2, (Risco Moderado de Lesão Por Pressão/Atríto)">2 - Moderado Risco</option>
+                                <option value="3, (Risco Alto de Lesão Por Pressão/Atríto)">3 - Alto Risco</option>
+                                <option value="4, (Risco Altíssimo de Lesão Por Pressão/Atríto)">4 - Muito Alto Risco</option>
                             </select>
+                            <!--
                             <label for="locallesãoporpressão">Local da Lesão por Pressão: </label>
                             <input type="text" id="localLesaoPressao" name="localLesaoPressao" placeholder="Local da Lesão por Pressão">
                             <label for="estagio">Estágio da Lesão por Pressão: </label>
@@ -263,25 +259,25 @@
                                 <option value="4">4 - Lesão Extensa com Exposição Óssea/Muscular</option>
                                 <option value="5">5 - Lesão Não Classificável</option>
                             </select>
+                        -->
                         </div>
                 </div>
                 <div>
                         <div>
                             <h2>Riscos: </h2>
-                            <input type="checkbox" name="riscoQueda" value="queda"> Queda
-                            <input type="checkbox" name="riscoQueda" value="queda"> Flebite
-                            <input type="checkbox" name="riscoQueda" value="queda"> TEV
-                            <input type="checkbox" name="riscoLesaoPressao" value="lesaoPressao"> Lesão por Pressão
-                            <input type="checkbox" name="riscoInfecao" value="infeccao"> Infecção
-                            <input type="checkbox" name="riscoBroncoaspiracao" value="broncoaspiracao"> Broncoaspiração
-                            <input type="checkbox" name="riscoFuga" value="fuga"> fuga
-                            <input type="checkbox" name="riscoAutoextermínio" value="autoexterminio"> Autoextermínio
-                            <input type="checkbox" name="riscoOutros" value="outros"> Outros
-                            <input type="text" name="descricaoRiscoOutros" placeholder="Descreva outros riscos">
-                            <input type="text" name="conduta" placeholder="Descreva a conduta adotada">
+                            <input type="checkbox" name="risco" value="queda"> Queda
+                            <input type="checkbox" name="risco" value="queda"> Flebite
+                            <input type="checkbox" name="risco" value="queda"> TEV
+                            <input type="checkbox" name="risco" value="lesaoPressao"> Lesão por Pressão
+                            <input type="checkbox" name="risco" value="infeccao"> Infecção
+                            <input type="checkbox" name="risco" value="broncoaspiracao"> Broncoaspiração
+                            <input type="checkbox" name="risco" value="fuga"> fuga
+                            <input type="checkbox" name="risco" value="autoexterminio"> Autoextermínio
+                            <input id="condutaAdotada" type="text" name="conduta" placeholder="Descreva a conduta adotada">
                         </div>
                 </div>
                 <div>
+                    <!--
                         <div>
                             <h2>Curativos: </h2>
                             <label for="tipodeferida">Tipo de Ferida: </label>
@@ -302,6 +298,7 @@
                             <label for="materialutilizado">Materiais Utilizados: </label>
                             <input type="text" id="materiaisutilizados" placeholder="Gaze, SF0,9%...">
                         </div>
+                    -->
             </div>
         </form>   
         <button type="button" onclick="gerarPDF()">Exportar PDF</button> 

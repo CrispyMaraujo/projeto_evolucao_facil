@@ -1,130 +1,3 @@
-/*async function gerarPDF() {
-const { jsPDF } = window.jspdf;
-    const doc = new jsPDF();
-
-    let marginLeft = 15;
-    let y = 20;
-    const linhaEspaco = 8;
-    function novaLinha(espaco = linhaEspaco) {
-    y += espaco;
-    if (y >= 280) { // quando se aproxima do final da página
-        doc.addPage();
-        y = 20;
-    }
-    }
-
-    // --- Título ---
-    doc.setFont("helvetica", "bold");
-    doc.setFontSize(16);
-    doc.text("Evolução Clínica do Paciente", 105, y, { align: "justify" });
-    y += 10;
-
-    doc.setFontSize(11);
-    doc.setFont("helvetica", "normal");
-
-    // --- Dados principais ---
-    const dadosPrincipais = [
-      [`Nome`, document.getElementById("patientName").value],
-      [`Idade`, document.getElementById("patientAge").value],
-      [`Data`, document.getElementById("evolutionDate").value],
-      [`Hora`, document.getElementById("evolutionTime").value],
-      [`Leito`, document.getElementById("patientBed").value],
-      [`DIH`, document.getElementById("dih").value]
-    ];
-
-    dadosPrincipais.forEach(([rotulo, valor]) => {
-      doc.text(`${rotulo}: ${valor}`, marginLeft, y);
-      novaLinha(); //y += linhaEspaco;
-    });
-
-    y += 5;
-
-    function adicionarSecao(titulo, dados) {
-      doc.setFont("helvetica", "bold");
-      doc.setTextColor(0, 0, 128);
-      doc.text(titulo, marginLeft, y);
-      y += linhaEspaco;
-      doc.setFont("helvetica", "normal");
-      doc.setTextColor(0, 0, 0);
-
-      dados.forEach(([rotulo, valor]) => {
-        doc.text(`${rotulo}: ${valor}`, marginLeft + 5, y);
-        y += linhaEspaco;
-      });
-
-      y += 5;
-    }
-
-    // --- Neurológico ---
-    adicionarSecao("Sistema Neurológico", [
-      ["Pupilas", document.getElementById("avaliacaoPupilar").value],
-      ["Reação Pupilar", document.getElementById("reacaoPupilar").value],
-      ["Sedação", document.getElementById("avaliacaoSedacao").value],
-    ]);
-
-    // --- Respiratório ---
-    adicionarSecao("Sistema Respiratório", [
-      ["FR", document.getElementById("fr").value],
-      ["Saturação", document.getElementById("saturacao").value],
-      ["Ventilação", document.getElementById("avaliacaoVentilacao").value],
-      ["MV Direito", document.getElementById("murmurioVesicularDireito").value],
-      ["MV Esquerdo", document.getElementById("murmurioVesicularEsquedo").value],
-      ["Ausculta", document.getElementById("auscutaPulmonar").value],
-      ["Tosse", document.getElementById("avaliacaoTosse").value],
-    ]);
-
-    // --- Cardiovascular ---
-    const turgidez = document.querySelector('input[name="turgidezjugular"]:checked');
-    adicionarSecao("Sistema Cardiovascular", [
-      ["FC", document.getElementById("frequenciaCardiaca").value],
-      ["PA", document.getElementById("pressaoArterial").value],
-      ["Pulso Periférico", document.getElementById("pulsoPeriferico").value],
-      ["Perfusão Periférica", document.getElementById("perfusaoPeriferica").value],
-      ["Turgidez Jugular", turgidez ? (turgidez.id.includes("Presente") ? "Presente" : "Ausente") : "—"],
-      ["Edema", document.getElementById("avaliacaoEdema").value],
-    ]);
-
-    // --- Gastrointestinal ---
-    let abdomen = [];
-    document.querySelectorAll('input[type="checkbox"][value^="abdomen"]:checked').forEach(el => abdomen.push(el.value));
-    const incisao = document.querySelector('input[name="incisaocirurgica"]:checked');
-
-    adicionarSecao("Sistema Gastrointestinal", [
-      ["Alimentação", document.getElementById("avaliacaoAlimentação").value],
-      ["Abdome", abdomen.join(", ") || "—"],
-      ["Ruidos Intestinais", document.getElementById("ruidosIntestinais").value],
-      ["Dieta", document.getElementById("avaliacaoDieta").value],
-      ["Incisão Cirúrgica", incisao ? (incisao.id.includes("Presente") ? "Presente" : "Ausente") : "—"],
-      ["Descrição Incisão", document.getElementById("incisaoCirurgicaDescricao").value],
-      ["Evacuação", document.getElementById("evacuacao").value],
-      ["Diurese", document.getElementById("diurese").value],
-    ]);
-
-    // --- Renal ---
-    adicionarSecao("Sistema Renal", [
-      ["Eliminações", document.getElementById("eliminacoesDiurese").value],
-      ["Tempo de Diálise", document.getElementById("tempoDialise").value],
-      ["Quantidade de Diurese", document.getElementById("quantidaDeDiurese").value],
-      ["Aspecto da Urina", document.getElementById("aspectoUrina").value],
-    ]);
-
-    // --- Endócrino / Tegumentar ---
-    adicionarSecao("Sistema Tegumentar / Endócrino", [
-      ["Glicemia Capilar", document.getElementById("glicemia").value],
-      ["Temperatura", document.getElementById("temperatura").value],
-    ]);
-
-    // --- Rodapé com data/hora ---
-    const now = new Date();
-    const dataHora = now.toLocaleString();
-    doc.setFontSize(9);
-    doc.setTextColor(100);
-    doc.text(`Gerado em: ${dataHora}`, marginLeft, 290);
-
-    // Salvar
-    const nomeArquivo = `Evolucao_${document.getElementById("patientName").value || "Paciente"}.pdf`;
-    doc.save(nomeArquivo);
-  }*/
 //Raiz do Projeto
 function gerarPDF() {
 const { jsPDF } = window.jspdf;
@@ -154,27 +27,41 @@ const frequenciaCardiaca = document.getElementById("frequenciaCardiaca").value;
 const pressaoArterial = document.getElementById("pressaoArterial").value;
 const pulsoPeriferico = document.getElementById("pulsoPeriferico").value;
 const perfusaoPeriferica = document.getElementById("perfusaoPeriferica").value;
-const turgidezJugular = document.querySelector('input[name"turgidezJugular"]:checked').value;
-const turgidezValor = turgidezJugular ? turgidezJugular.value : "Não informado!";
+const turgidezSelected = document.querySelector('input[type="radio"][name="turgidezJugular"]:checked');
+const turgidezJugular = turgidezSelected ? turgidezSelected.value : 'Turgidez não avaliada';
 const avaliacaoEdema = document.getElementById("avaliacaoEdema").value;
 const avaliacaoAlimentacao = document.getElementById("avaliacaoAlimentacao").value;
 const avaliacaoDieta = document.getElementById("avaliacaoDieta").value;
-const avaliacaoAbdomen = Array.from(document.querySelectorAll('input[name="avaliacaoAbdomen"]:checked')).map(cb => cb.value);
+let avaliacaoAbdomen = [];
+document.querySelectorAll('input[type="checkbox"][name="avaliacaoAbdomen"]:checked').forEach(el => avaliacaoAbdomen.push(el.value));
 const ruidosIntestinais = document.getElementById("ruidosIntestinais").value;
+const incisaoSelected = document.querySelector('input[type="radio"][name="incisaoCirurgica"]:checked');
+const incisaoCirurgica = incisaoSelected ? incisaoSelected.value : 'incisão cirúrgica não avaliada/encontrada';
+const incisaoCirurgicaDescricao = document.getElementById("incisaoCirurgicaDescricao").value;
+const evacuacaoSelected = document.querySelector('input[type="radio"][name="evacuacao"]:checked');
+const evacuacao = evacuacaoSelected ? evacuacaoSelected.value : 'não avaliada/encontrada';
+const eliminacoesDiurese = document.getElementById("eliminacoesDiurese").value;
+const tempoDialise = document.getElementById("tempoDialise").value;
+const quantidaDeDiurese = document.getElementById("quantidaDeDiurese").value;
+const aspectoUrina = document.getElementById("aspectoUrina").value;
+const glicemia = document.getElementById("glicemia").value;
+const temperatura = document.getElementById("temperatura").value;
+const extremidadeSelected = document.querySelector('input[type="radio"][name="extremidade"]:checked');
+const extremidade = extremidadeSelected ? extremidadeSelected.value : 'não avaliada/encontrada';
+const corSelected = document.querySelector('input[type="radio"][name="cor"]:checked');
+const cor = corSelected ? corSelected.value : 'não avaliada/encontrada';
+const escalaDeBranden = document.getElementById("escalaDeBranden").value;
+let risco = [];
+document.querySelectorAll('input[type="checkbox"][name="risco"]:checked').forEach(el => risco.push(el.value));
+const condutaAdotada = document.getElementById("condutaAdotada").value;
 //OBS: fazer calculo da Glasgow!!!!!
-
-if (!paciente || !data || !hora) {
-  alert("Preencha os campos obrigatórios: nome, data e hora.");
-  return;
-}
-
     const textoEvolucao = `
-    Paciente em leito hospitalar, consciente, orientado, Glasgow 15, pupilas ${pupilas} e ${reacaoPupilar}, ${avaliacaoSedacao}. Apresenta FR = ${frequenciaRespiratoria} irpm, saturando ${saturacaoO2}% em ${avaliacaoVentilacao}, com padrão respiratório ${ritmoRespiratorio}. Murmúrios vesiculares: ${murmurioVesicularDireito} a direita e ${murmurioVesicularEsquerdo} a esquerda, ausculta pulmonar com aspecto ${auscutaPulmonar}, tosse ${avaliacaoTosse}. FC = ${frequenciaCardiaca} bpm, PA = ${pressaoArterial} mmHg, pulso periférico ${pulsoPeriferico} e perfusão periférica ${perfusaoPeriferica}. ${turgidezJugular} e ${avaliacaoEdema} em membros inferiores.
-    Alimentação por ${avaliacaoAlimentacao}, ${avaliacaoDieta}. ${avaliacaoAbdomen}, ruídos hidroaéreos ${ruidosIntestinais}. Evacuação e diurese espontâneas, diurese preservada em 1.400 mL/24h, aspecto da urina amarelo claro e límpido. Glicemia capilar de 102 mg/dL e temperatura axilar de 36,7°C. Extremidades aquecidas, paciente corado, sem alterações dermatológicas aparentes. Braden = 18 (risco moderado de lesão por pressão). Ausência de dispositivos invasivos no momento.
+    Paciente em leito hospitalar, consciente, orientado, Glasgow 15, pupilas ${pupilas} e ${reacaoPupilar}, ${sedacao}. Apresenta FR = ${frequenciaRespiratoria} irpm, saturando ${saturacaoO2}% em ${avaliacaoVentilacao}, com padrão respiratório ${ritmoRespiratorio}. Murmúrios vesiculares: ${murmurioVesicularDireito} a direita e ${murmurioVesicularEsquerdo} a esquerda, ausculta pulmonar com aspecto ${auscutaPulmonar}, tosse ${avaliacaoTosse}. FC = ${frequenciaCardiaca} bpm, PA = ${pressaoArterial} mmHg, pulso periférico ${pulsoPeriferico} e perfusão periférica ${perfusaoPeriferica}. ${turgidezJugular} e ${avaliacaoEdema} em membros inferiores.
+    Alimentação por ${avaliacaoAlimentacao}, ${avaliacaoDieta}. Abdomên ${avaliacaoAbdomen}, ruídos hidroaéreos ${ruidosIntestinais}, ${incisaoCirurgica + incisaoCirurgicaDescricao}. Evacuação ${evacuacao}, diurese ${eliminacoesDiurese + tempoDialise} em ${quantidaDeDiurese} mL/24h, aspecto da urina ${aspectoUrina}. Glicemia capilar de ${glicemia} mg/dL e temperatura axilar de ${temperatura}°C. Extremidades ${extremidade}, paciente ${cor}. Braden = ${escalaDeBranden}. Apresenta risco de ${risco}.
     `.trim();
 
     const textoConduta = `
-  Manter medidas de prevenção de lesão por pressão, reposicionamento a cada 2h, hidratação oral incentivada, controle glicêmico conforme prescrição médica e manutenção de dieta via oral. Seguir plano de cuidados conforme protocolo institucional.
+  ${condutaAdotada}
     `.trim();
 
     let marginLeft = 20;
