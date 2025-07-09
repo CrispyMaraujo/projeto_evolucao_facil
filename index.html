@@ -38,6 +38,7 @@
                             <h2>Escala de Coma de Glasgow (ECG): </h2>
                                 <label for="pupilas">Pupílas: </label>
                                 <select name="avaliacaoPupilar" id="avaliacaoPupilar">
+                                    <option disabled selected hidden >Selecione</option>
                                     <option value="isocóricas">Isocóricas</option>
                                     <option value="Anisocóricas com D>E">Anisocóricas D>E</option>
                                     <option value="Anisocóricas com E>D">Anisocóricas E>D</option>
@@ -46,6 +47,8 @@
                                     <option value="Mióticas">Mióticas</option>
                                 </select>
                                 <select name="reacaoPupilar" id="reacaoPupilar">
+                                    <option disabled selected hidden >Selecione</option>
+                                    <option 
                                     <option value="fotorreagentes">Fotorreagentes</option>
                                     <option value="sem reação a luz estimulante">Não Reagem</option>
                                 </select>
@@ -54,6 +57,7 @@
                             <h2>Sedação: </h2>
                                 <label for="sedation">Sedação: </label>
                                 <select name="avaliacaoSedacao" id="avaliacaoSedacao">
+                                    <option disabled selected hidden >Selecione</option>
                                     <option value="não sedado">Não Sedado</option>
                                     <option value="com sedação leve">Leve</option>
                                     <option value="com sedação moderada">Moderado</option>
@@ -71,6 +75,7 @@
                         <input type="number" id="saturacao" name="saturacao" placeholder="Saturação" required>
                         <label for="ritmo">Ritmo: </label>
                         <select name="ritmoRespiratorio" id="ritmoRespiratorio">
+                            <option disabled selected hidden >Selecione</option>
                             <option value="eupneia">Eupneia</option>
                             <option value="taquipneia">Taquipnéia</option>
                             <option value="bradipneia">Bradipneia</option>
@@ -80,6 +85,7 @@
                         </select>
                         <label for="ventilacao">Ventilação: </label>
                         <select name="avaliacaoVentilacao" id="avaliacaoVentilacao">
+                            <option disabled selected hidden >Selecione</option>
                             <option value="ar Ambiente">Espontânea</option>
                             <option value="Ventilação Assistida">Assistida</option>
                             <option value="Ventilação Controlada">Controlada</option>
@@ -90,6 +96,7 @@
                         </select>
                         <label for="murmurioVesicularDireito">Murmúrios Vesiculares Direito: </label>
                         <select name="murmurioVesicularDireito" id="murmurioVesicularDireito">
+                            <option disabled selected hidden >Selecione</option>
                             <option value="normal">Normal</option>
                             <option value="diminuido">Diminuído</option>
                             <option value="abolido">Abolido</option>
@@ -97,6 +104,7 @@
                         </select>
                         <label for="murmurioVesicularEsquerdo">Murmúrios Vesiculares Esquerdo: </label>
                         <select name="murmurioVesicularEsquerdo" id="murmurioVesicularEsquerdo">
+                            <option disabled selected hidden >Selecione</option>
                             <option value="normal">Normal</option>
                             <option value="diminuido">Diminuído</option>
                             <option value="abolido">Abolido</option>
@@ -104,6 +112,7 @@
                         </select>
                         <label for="auscutaPulmonar">Auscuta Pulmonar: </label>
                         <select name="auscutaPulmonar" id="auscutaPulmonar">
+                            <option disabled selected hidden >Selecione</option>
                             <option value="normal">Normal</option>
                             <option value="de estertores">Estertores</option>
                             <option value="de roncos">Roncos</option>
@@ -111,12 +120,13 @@
                             <option value="de frêmito">Frêmito</option>
                             <option value="de crepitações">Crepitações</option>
                         </select>
-                            <label for="avaliacaoTosse">Tosse: </label>
-                            <select name="avaliacaoTosse" id="avaliacaoTosse">
-                                <option value="presente e produtiva">Presente Produtiva</option>
-                                <option value="presente e seca">Presente Seca</option>
-                                <option value="ausente">Ausente</option>
-                            </select>
+                        <label for="avaliacaoTosse">Tosse: </label>
+                        <select name="avaliacaoTosse" id="avaliacaoTosse">
+                            <option disabled selected hidden >Selecione</option>
+                            <option value="presente e produtiva">Presente Produtiva</option>
+                            <option value="presente e seca">Presente Seca</option>
+                            <option value="ausente">Ausente</option>
+                        </select>
                 </div>
             </section>
             <section>
@@ -129,6 +139,7 @@
                             <input type="text" id="pressaoArterial" name="pressaoArterial" placeholder="Pressão Arterial" required>
                             <label for="pulsoPeriferico">Pulso Periférico: </label>
                             <select name="pulsoPeriferico" id="pulsoPeriferico">
+                                <option disabled selected hidden >Selecione</option>
                                 <option value="Regular, porém ocluído com pressão leve">Pulso Regular</option>
                                 <option value="Ausente">Pulso Ausente</option>
                                 <option value="Filiforme">Pulso Filiforme, ocluído por pressão leve</option>
@@ -137,6 +148,7 @@
                             </select>
                             <label for="perfusaoPeriferica">Perfusão Periférica: </label>
                             <select name="perfusaoPeriferica" id="perfusaoPeriferica">
+                                <option disabled selected hidden >Selecione</option>
                                 <option value="normal (< 2 segundos)">Normal</option>
                                 <option value="diminuida (> 2 segundos)">Diminuída >2seg </option>
                             </select>
@@ -147,6 +159,7 @@
 
                             <label for="avaliacaoEdema">Edema: </label>
                             <select name="avaliacaoEdema" id="avaliacaoEdema">
+                                <option disabled selected hidden >Selecione</option>
                                 <option value="edema presente +/++++">+1, peq depressão no tecido</option>
                                 <option value="edema presente ++/++++">+2, &#60;2segs</option>
                                 <option value="edema presente +++/++++">+3, &#60;3segs</option>
@@ -160,6 +173,7 @@
                             <h2>Gastrointestinal: </h2>
                             <label for="avaliacaoAlimentação">Alimentação: </label>
                             <select name="avaliacaoAlimentacao" id="avaliacaoAlimentacao">
+                                <option disabled selected hidden >Selecione</option>
                                 <option value="via Oral">Via Oral</option>
                                 <option value="sonda NasoEnteral">Sonda Nasoenteral</option>
                                 <option value="sonda NasoGastrica">Sonda Nasogástrica</option>
@@ -169,16 +183,15 @@
                                 <option value="nutrição Parenteral">Nutrição Parenteral</option>
                             </select>
                             <label for="avaliacaoAbdomen">Abdomên: </label>
-                            
                                 <input name="avaliacaoAbdomen" id="avaliacaoAbdomen1" type="checkbox" value="globoso">Globoso
                                 <input id="avaliacaoAbdomen2" name="avaliacaoAbdomen" type="checkbox" value="plano">Plano
                                 <input id="avaliacaoAbdomen3" name="avaliacaoAbdomen" type="checkbox" value="escavado">Escavado
                                 <input id="avaliacaoAbdomen4" name="avaliacaoAbdomen" type="checkbox" value="flácido">Flácido
                                 <input id="avaliacaoAbdomen5" name="avaliacaoAbdomen" type="checkbox" value="depressível">Depressível
                                 <input id="avaliacaoAbdomen6" name="avaliacaoAbdomen" type="checkbox" value="endurecido/tenso">Endurecido/Tenso
-
                             <label for="ruidosIntestinais">Ruidos Intestinais: </label>
                             <select name="ruidosIntestinais" id="ruidosIntestinais">
+                                <option disabled selected hidden >Selecione</option>
                                 <option value="presente e normais">Normais</option>
                                 <option value="presentes e aumentados">Aumentados</option>
                                 <option value="presentes mas diminuídos">Diminuídos</option>
@@ -186,6 +199,7 @@
                             </select>
                             <label for="avaliacaoDieta">Dieta: </label>
                             <select name="avaliacaoDieta" id="avaliacaoDieta">
+                                <option disabled selected hidden >Selecione</option>
                                 <option value="com boa aceitação">Boa Aceitação</option>
                                 <option value="com aceitação ruim">Aceitação Ruim</option>
                                 <option value="não aceita">Não Aceita</option>
@@ -206,6 +220,7 @@
                             <h2>Renal: </h2>
                             <label for="diurese">Diurese: </label>
                             <select name="eliminacoesDiurese" id="eliminacoesDiurese">
+                                <option disabled selected hidden >Selecione</option>
                                 <option value="espontânea">Espontânea</option>
                                 <option value="por Sonda Vesical de Demora">Sonda Vesical de Demora</option>
                                 <option value="em retencao de urina">Retenção</option>
@@ -241,6 +256,7 @@
                                 <input type="radio" id="corEritema" name="cor" value="com presença de eritema"> Eritema
                             <label for="escalaDeBranden">Escala de Branden: </label>
                             <select name="escalaDeBranden" id="escalaDeBranden">
+                                <option disabled selected hidden >Selecione</option>
                                 <option value="0, (Sem Risco de Lesão Por Pressão/Atríto)">0 - Sem Risco</option>
                                 <option value="1, (Baixo Risco de Lesão Por Pressão/Atríto)">1 - Baixo Risco</option>
                                 <option value="2, (Risco Moderado de Lesão Por Pressão/Atríto)">2 - Moderado Risco</option>

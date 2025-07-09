@@ -55,6 +55,10 @@ let risco = [];
 document.querySelectorAll('input[type="checkbox"][name="risco"]:checked').forEach(el => risco.push(el.value));
 const condutaAdotada = document.getElementById("condutaAdotada").value;
 //OBS: fazer calculo da Glasgow!!!!!
+if (!pupilas || !reacaoPupilar || !sedacao || !ritmoRespiratorio || !avaliacaoVentilacao || !murmurioVesicularDireito || !murmurioVesicularEsquerdo || !auscutaPulmonar || !avaliacaoTosse || !pulsoPeriferico || !perfusaoPeriferica || !turgidezSelected || !avaliacaoEdema || !avaliacaoAlimentacao || !avaliacaoAbdomen || !ruidosIntestinais || !avaliacaoDieta || !incisaoSelected || !evacuacaoSelected || !eliminacoesDiurese || !extremidadeSelected || !corSelected || !escalaDeBranden || !risco) {
+  alert("Por favor, selecione uma opção válida.");
+  return;
+}
     const textoEvolucao = `
     Paciente em leito hospitalar, consciente, orientado, Glasgow 15, pupilas ${pupilas} e ${reacaoPupilar}, ${sedacao}. Apresenta FR = ${frequenciaRespiratoria} irpm, saturando ${saturacaoO2}% em ${avaliacaoVentilacao}, com padrão respiratório ${ritmoRespiratorio}. Murmúrios vesiculares: ${murmurioVesicularDireito} a direita e ${murmurioVesicularEsquerdo} a esquerda, ausculta pulmonar com aspecto ${auscutaPulmonar}, tosse ${avaliacaoTosse}. FC = ${frequenciaCardiaca} bpm, PA = ${pressaoArterial} mmHg, pulso periférico ${pulsoPeriferico} e perfusão periférica ${perfusaoPeriferica}. ${turgidezJugular} e ${avaliacaoEdema} em membros inferiores.
     Alimentação por ${avaliacaoAlimentacao}, ${avaliacaoDieta}. Abdomên ${avaliacaoAbdomen}, ruídos hidroaéreos ${ruidosIntestinais}, ${incisaoCirurgica + incisaoCirurgicaDescricao}. Evacuação ${evacuacao}, diurese ${eliminacoesDiurese + tempoDialise} em ${quantidaDeDiurese} mL/24h, aspecto da urina ${aspectoUrina}. Glicemia capilar de ${glicemia} mg/dL e temperatura axilar de ${temperatura}°C. Extremidades ${extremidade}, paciente ${cor}. Braden = ${escalaDeBranden}. Apresenta risco de ${risco}.
