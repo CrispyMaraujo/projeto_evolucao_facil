@@ -2,75 +2,124 @@
 function gerarPDF() {
 const { jsPDF } = window.jspdf;
 const doc = new jsPDF();
+const marginLeft = 20;
+const larguraTexto = 170;
+let y = 20;
+
+//Função auxiliar para capturar valores de inputs
+const getValue = (id) => document.getElementById(id)?.value || '';
+const getRadioValue = (name, fallback = 'Não avaliado') => {
+  const selected = document.querySelector(`input[name="${name}"]:checked`);
+  return selected ? selected.value : fallback;
+};
+const getCheckboxValues = (name) => {
+  return Array.from(document.querySelectorAll(`input[name="${name}"]:checked`)).map(el => el.value);
+};
+
 //Captação de dados do local do Paciente
-const paciente = document.getElementById("patientName").value;
-const idade = document.getElementById("patientAge").value;
-const data = document.getElementById("evolutionDate").value;
-const hora = document.getElementById("evolutionTime").value;
-const leito = document.getElementById("patientBed").value;
-const dih = document.getElementById("dih").value;
-const ala = document.getElementById("alaPaciente").value;
-//Parte de Avaliação Neurológica
-const pupilas = document.getElementById("avaliacaoPupilar").value;
-const reacaoPupilar = document.getElementById("reacaoPupilar").value;
-const sedacao = document.getElementById("avaliacaoSedacao").value;
-//Sinais Vitais
-const frequenciaRespiratoria = document.getElementById("fr").value;
-const saturacaoO2 = document.getElementById("saturacao").value;
-const ritmoRespiratorio = document.getElementById("ritmoRespiratorio").value;
-const avaliacaoVentilacao = document.getElementById("avaliacaoVentilacao").value;
-const murmurioVesicularDireito = document.getElementById("murmurioVesicularDireito").value;
-const murmurioVesicularEsquerdo = document.getElementById("murmurioVesicularEsquerdo").value;
-const auscutaPulmonar = document.getElementById("auscutaPulmonar").value;
-const avaliacaoTosse = document.getElementById("avaliacaoTosse").value;
-const frequenciaCardiaca = document.getElementById("frequenciaCardiaca").value;
-const pressaoArterial = document.getElementById("pressaoArterial").value;
-const pulsoPeriferico = document.getElementById("pulsoPeriferico").value;
-const perfusaoPeriferica = document.getElementById("perfusaoPeriferica").value;
-const turgidezSelected = document.querySelector('input[type="radio"][name="turgidezJugular"]:checked');
-const turgidezJugular = turgidezSelected ? turgidezSelected.value : 'Turgidez não avaliada';
-const avaliacaoEdema = document.getElementById("avaliacaoEdema").value;
-const avaliacaoAlimentacao = document.getElementById("avaliacaoAlimentacao").value;
-const avaliacaoDieta = document.getElementById("avaliacaoDieta").value;
-let avaliacaoAbdomen = [];
-document.querySelectorAll('input[type="checkbox"][name="avaliacaoAbdomen"]:checked').forEach(el => avaliacaoAbdomen.push(el.value));
-const ruidosIntestinais = document.getElementById("ruidosIntestinais").value;
-const incisaoSelected = document.querySelector('input[type="radio"][name="incisaoCirurgica"]:checked');
-const incisaoCirurgica = incisaoSelected ? incisaoSelected.value : 'incisão cirúrgica não avaliada/encontrada';
-const incisaoCirurgicaDescricao = document.getElementById("incisaoCirurgicaDescricao").value;
-const evacuacaoSelected = document.querySelector('input[type="radio"][name="evacuacao"]:checked');
-const evacuacao = evacuacaoSelected ? evacuacaoSelected.value : 'não avaliada/encontrada';
-const eliminacoesDiurese = document.getElementById("eliminacoesDiurese").value;
-const tempoDialise = document.getElementById("tempoDialise").value;
-const quantidaDeDiurese = document.getElementById("quantidaDeDiurese").value;
-const aspectoUrina = document.getElementById("aspectoUrina").value;
-const glicemia = document.getElementById("glicemia").value;
-const temperatura = document.getElementById("temperatura").value;
-const extremidadeSelected = document.querySelector('input[type="radio"][name="extremidade"]:checked');
-const extremidade = extremidadeSelected ? extremidadeSelected.value : 'não avaliada/encontrada';
-const corSelected = document.querySelector('input[type="radio"][name="cor"]:checked');
-const cor = corSelected ? corSelected.value : 'não avaliada/encontrada';
-const escalaDeBranden = document.getElementById("escalaDeBranden").value;
-let risco = [];
-document.querySelectorAll('input[type="checkbox"][name="risco"]:checked').forEach(el => risco.push(el.value));
-const condutaAdotada = document.getElementById("condutaAdotada").value;
-//OBS: fazer calculo da Glasgow!!!!!
-if (!pupilas || !reacaoPupilar || !sedacao || !ritmoRespiratorio || !avaliacaoVentilacao || !murmurioVesicularDireito || !murmurioVesicularEsquerdo || !auscutaPulmonar || !avaliacaoTosse || !pulsoPeriferico || !perfusaoPeriferica || !turgidezSelected || !avaliacaoEdema || !avaliacaoAlimentacao || !avaliacaoAbdomen || !ruidosIntestinais || !avaliacaoDieta || !incisaoSelected || !evacuacaoSelected || !eliminacoesDiurese || !extremidadeSelected || !corSelected || !escalaDeBranden || !risco) {
-  alert("Por favor, selecione uma opção válida.");
+const dadosPaciente = {
+paciente: getValue("patientName"),
+idade: getValue("patientAge"),
+data: getValue("evolutionDate"),
+hora: getValue("evolutionTime"),
+leito: getValue("patientBed"),
+dih: getValue("dih"),
+ala: getValue("alaPaciente")
+}
+      //Seção do Calculo de ECG:
+//Captação:
+const ocular = parseInt(document.getElementById("ocular").value);
+const verbal = parseInt(document.getElementById("verbal").value);
+const motora = parseInt(document.getElementById("motora").value);
+const reatividadePupilar = parseInt(document.getElementById("reatividadePupilar").value);
+
+//Cálculo:
+const escalaDeComaDeGlasgow = ocular + verbal + motora - reatividadePupilar;
+
+//Validação:
+if (isNaN(ocular) || isNaN(verbal) || isNaN(motora) || isNaN(reatividadePupilar)) {
+      alert("Por favor, preecha todos os campos da Escala de Coma de Glasgow!");
+      return;
+}
+
+      //Seção de campos do texto
+const campos = {
+        //Seção de Avaliação Neurológica:
+  pupilas: getValue("avaliacaoPupilar"),
+  reacaoPupilar: getValue("reacaoPupilar"),
+  sedacao: getValue("avaliacaoSedacao"),
+        //Seção de Sinais Vitais:
+  frequenciaRespiratoria: getValue("frequenciaRespiratoria"),
+  saturacaoO2: getValue("saturacao"),
+  ritmoRespiratorio: getValue("ritmoRespiratorio"),
+  frequenciaCardiaca: getValue("frequenciaCardiaca"),
+  pressaoArterial: getValue("pressaoArterial"),
+  pulsoPeriferico: getValue("pulsoPeriferico"),
+  perfusaoPeriferica: getValue("perfusaoPeriferica"),
+  glicemia: getValue("glicemia"),
+  temperatura: getValue("temperatura"),
+        //Seção de Avaliação Cardíaca:
+  turgidezJugular: getRadioValue("turgidezJugular"),
+  avaliacaoEdema: getValue("avaliacaoEdema"),
+        //Seção de Avaliação Pulmonar:
+  avaliacaoVentilacao: getValue("avaliacaoVentilacao"),
+  murmurioVesicularDireito: getValue("murmurioVesicularDireito"),
+  murmurioVesicularEsquerdo: getValue("murmurioVesicularEsquerdo"),
+  auscutaPulmonar: getValue("auscutaPulmonar"),
+  avaliacaoTosse: getValue("avaliacaoTosse"),
+        //Seção de Avaliação Dietética:
+  avaliacaoAlimentacao: getValue("avaliacaoAlimentacao"),
+  avaliacaoDieta: getValue("avaliacaoDieta"),
+        //Seção de Avaliação Abdominal:
+  avaliacaoAbdomen: getCheckboxValues("avaliacaoAbdomen"),
+  ruidosIntestinais: getValue("ruidosIntestinais"),
+  incisaoCirurgica: getRadioValue("incisaoCirurgica"),
+  incisaoCirurgicaDescricao: getValue("incisaoCirurgicaDescricao"),
+  evacuacao: getRadioValue("evacuacao"),
+        //Seção de Avaliação de Diurese:
+  eliminacoesDiurese: getValue("eliminacaoDiurese"),
+  tempoDialise: getValue("tempoDialise"),
+  quantidaDeDiurese: getValue("quantidadeDeDiurese"),
+  aspectoUrina: getValue("aspectoUrina"),
+        //Seção de Avaliação Dermatológica:
+  extremidade: getRadioValue("extremidade"),
+  cor: getRadioValue("cor"),
+  escalaDeBranden: getValue("escalaDeBranden"),
+  risco: getCheckboxValues("risco"),
+  condutaAdotada: getValue("condutaAdotada")
+}
+
+/*
+     //Seção Lesão Por Pressão:
+//Captação:
+document.addEventListener("DOMContentLoaded", function() {
+      const selectFerida = document.getElementById("haferida");
+      const tipoFeridaAparecer = document.getElementById("tipoFeridaAparecer");
+      //Validação:
+      selectFerida.addEventListener("change", function(){
+             console.log("Valor selecionado:", selectFerida.value);
+      if (selectFerida.value === "Sim") {
+            tipoFeridaAparecer.style.display = "block";
+      } else {
+            tipoFeridaAparecer.style.display = "none";
+      }
+      });
+});
+*/
+if (!campos || !dadosPaciente) {
+  alert("Por favor, selecione uma opção válida. TODOS OS CAMPOS SÃO OBRIGATÓRIOS!");
   return;
 }
     const textoEvolucao = `
-    Paciente em leito hospitalar, consciente, orientado, Glasgow 15, pupilas ${pupilas} e ${reacaoPupilar}, ${sedacao}. Apresenta FR = ${frequenciaRespiratoria} irpm, saturando ${saturacaoO2}% em ${avaliacaoVentilacao}, com padrão respiratório ${ritmoRespiratorio}. Murmúrios vesiculares: ${murmurioVesicularDireito} a direita e ${murmurioVesicularEsquerdo} a esquerda, ausculta pulmonar com aspecto ${auscutaPulmonar}, tosse ${avaliacaoTosse}. FC = ${frequenciaCardiaca} bpm, PA = ${pressaoArterial} mmHg, pulso periférico ${pulsoPeriferico} e perfusão periférica ${perfusaoPeriferica}. ${turgidezJugular} e ${avaliacaoEdema} em membros inferiores.
-    Alimentação por ${avaliacaoAlimentacao}, ${avaliacaoDieta}. Abdomên ${avaliacaoAbdomen}, ruídos hidroaéreos ${ruidosIntestinais}, ${incisaoCirurgica + incisaoCirurgicaDescricao}. Evacuação ${evacuacao}, diurese ${eliminacoesDiurese + tempoDialise} em ${quantidaDeDiurese} mL/24h, aspecto da urina ${aspectoUrina}. Glicemia capilar de ${glicemia} mg/dL e temperatura axilar de ${temperatura}°C. Extremidades ${extremidade}, paciente ${cor}. Braden = ${escalaDeBranden}. Apresenta risco de ${risco}.
+    Paciente em leito hospitalar, consciente, orientado, Glasgow ${escalaDeComaDeGlasgow}, pupilas ${campos.pupilas} e ${campos.reacaoPupilar}, ${campos.sedacao}. Apresenta FR = ${campos.frequenciaRespiratoria} irpm, saturando ${campos.saturacaoO2}% em ${campos.avaliacaoVentilacao}, com padrão respiratório ${campos.ritmoRespiratorio}. Murmúrios vesiculares: ${campos.murmurioVesicularDireito} a direita e ${campos.murmurioVesicularEsquerdo} a esquerda, ausculta pulmonar com aspecto ${campos.auscutaPulmonar}, tosse ${campos.avaliacaoTosse}. FC = ${campos.frequenciaCardiaca} bpm, PA = ${campos.pressaoArterial} mmHg, pulso periférico ${campos.pulsoPeriferico} e perfusão periférica ${campos.perfusaoPeriferica}. ${campos.turgidezJugular} e ${campos.avaliacaoEdema} em membros inferiores.
+    Alimentação por ${campos.avaliacaoAlimentacao}, ${campos.avaliacaoDieta}. Abdomên ${campos.avaliacaoAbdomen}, ruídos hidroaéreos ${campos.ruidosIntestinais}, ${campos.incisaoCirurgica + campos.incisaoCirurgicaDescricao}. Evacuação ${campos.evacuacao}, diurese ${campos.eliminacoesDiurese + campos.tempoDialise} em ${campos.quantidaDeDiurese} mL/24h, aspecto da urina ${campos.aspectoUrina}. Glicemia capilar de ${campos.glicemia} mg/dL e temperatura axilar de ${campos.temperatura}°C. Extremidades ${campos.extremidade}, paciente ${campos.cor}. Braden = ${campos.escalaDeBranden}. Apresenta risco de ${campos.risco}.
     `.trim();
 
     const textoConduta = `
-  ${condutaAdotada}
+  ${campos.condutaAdotada}
     `.trim();
 
-    let marginLeft = 20;
-    let y = 20;
-    let larguraTexto = 170;
+            //Seção de criação do PDF:
 
     doc.setFont("helvetica", "bold");
     doc.setFontSize(14);
@@ -79,15 +128,15 @@ if (!pupilas || !reacaoPupilar || !sedacao || !ritmoRespiratorio || !avaliacaoVe
     y += 10;
     doc.setFontSize(12);
     doc.setFont("helvetica", "normal");
-    doc.text(`Paciente: ${paciente}`, marginLeft, y);
-    doc.text(`Idade: ${idade}`, marginLeft + 100, y);
-    doc.text(`Ala: ${ala}`, marginLeft + 140, y);
+    doc.text(`Paciente: ${dadosPaciente.paciente}`, marginLeft, y);
+    doc.text(`Idade: ${dadosPaciente.idade}`, marginLeft + 100, y);
+    doc.text(`Ala: ${dadosPaciente.ala}`, marginLeft + 140, y);
 
     y += 8;
-    doc.text(`Data: ${data}`, marginLeft, y);
-    doc.text(`Hora: ${hora}`, marginLeft + 50, y);
-    doc.text(`Leito: ${leito}`, marginLeft + 100, y);
-    doc.text(`DIH: ${dih}`, marginLeft + 140, y);
+    doc.text(`Data: ${dadosPaciente.data}`, marginLeft, y);
+    doc.text(`Hora: ${dadosPaciente.hora}`, marginLeft + 50, y);
+    doc.text(`Leito: ${dadosPaciente.leito}`, marginLeft + 100, y);
+    doc.text(`DIH: ${dadosPaciente.dih}`, marginLeft + 140, y);
 
     y += 10;
     doc.setFont("helvetica", "bold");

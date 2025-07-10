@@ -36,22 +36,55 @@
                 <div id="neurologicoDiv">
                         <div id="escalaDeComaDeGlasgow">
                             <h2>Escala de Coma de Glasgow (ECG): </h2>
-                                <label for="pupilas">Pupílas: </label>
-                                <select name="avaliacaoPupilar" id="avaliacaoPupilar">
-                                    <option disabled selected hidden >Selecione</option>
-                                    <option value="isocóricas">Isocóricas</option>
-                                    <option value="Anisocóricas com D>E">Anisocóricas D>E</option>
-                                    <option value="Anisocóricas com E>D">Anisocóricas E>D</option>
-                                    <option value="Puntiformes">Puntiformes</option>
-                                    <option value="Midriáticas">Midriáticas</option>
-                                    <option value="Mióticas">Mióticas</option>
-                                </select>
-                                <select name="reacaoPupilar" id="reacaoPupilar">
-                                    <option disabled selected hidden >Selecione</option>
-                                    <option 
-                                    <option value="fotorreagentes">Fotorreagentes</option>
-                                    <option value="sem reação a luz estimulante">Não Reagem</option>
-                                </select>
+                            <label for="ocular">Abertura Ocular: </label>
+                            <select name="ocular" id="ocular">
+                                <option disabled selected hidden>Selecione</option>
+                                <option value="4">Espontânea</option>
+                                <option value="3">À voz</option>
+                                <option value="2">À dor</option>
+                                <option value="1">Nenhuma</option>
+                            </select>
+                            <label for="verbal">Resposta Verbal: </label>
+                            <select name="verbal" id="verbal">
+                                <option disabled selected hidden>Selecione</option>
+                                <option value="5">Orientado</option>
+                                <option value="4">Confuso</option>
+                                <option value="3">Verbaliza palavras soltas</option>
+                                <option value="2">Verbaliza sons</option>
+                                <option value="1">Nenhuma</option>
+                            </select>
+                            <label for="motora">Resposta Motora: </label>
+                            <select name="motora" id="motora">
+                                <option disabled selected hidden>Selecione</option>
+                                <option value="6">Obedece comandos</option>
+                                <option value="5">Localiza estímulos</option>
+                                <option value="4">Flexão normal</option>
+                                <option value="3">Flexão anormal</option>
+                                <option value="2">Extensão anormal</option>
+                                <option value="1">Nenhuma</option>
+                            </select>
+                            <label for="reatividadePupilar">Reatividade Pupilar: </label>
+                            <select name="reatividadePupilar" id="reatividadePupilar">
+                                <option disabled selected hidden>Selecione</option>
+                                <option value="2">Inexistente</option>
+                                <option value="1">Unilateral</option>
+                                <option value="0">Bilateral</option>
+                            </select>
+                            <label for="pupilas">Pupílas: </label>
+                            <select name="avaliacaoPupilar" id="avaliacaoPupilar">
+                                <option disabled selected hidden >Selecione</option>
+                                <option value="isocóricas">Isocóricas</option>
+                                <option value="Anisocóricas com D>E">Anisocóricas D>E</option>
+                                <option value="Anisocóricas com E>D">Anisocóricas E>D</option>
+                                <option value="Puntiformes">Puntiformes</option>
+                                <option value="Midriáticas">Midriáticas</option>
+                                <option value="Mióticas">Mióticas</option>
+                            </select>
+                            <select name="reacaoPupilar" id="reacaoPupilar">
+                                <option disabled selected hidden >Selecione</option>
+                                <option value="fotorreagentes">Fotorreagentes</option>
+                                <option value="sem reação a luz estimulante">Não Reagem</option>
+                            </select>
                         </div>
                         <div id="sedacaoDiv">
                             <h2>Sedação: </h2>
@@ -263,29 +296,16 @@
                                 <option value="3, (Risco Alto de Lesão Por Pressão/Atríto)">3 - Alto Risco</option>
                                 <option value="4, (Risco Altíssimo de Lesão Por Pressão/Atríto)">4 - Muito Alto Risco</option>
                             </select>
-                            <!--
-                            <label for="locallesãoporpressão">Local da Lesão por Pressão: </label>
-                            <input type="text" id="localLesaoPressao" name="localLesaoPressao" placeholder="Local da Lesão por Pressão">
-                            <label for="estagio">Estágio da Lesão por Pressão: </label>
-                            <select name="" id="">
-                                <option value="0">0 - Sem Lesão</option>
-                                <option value="1">1 - Eritema Não Desaparece</option>
-                                <option value="2">2 - Perda Parcial da Espessura da Pele</option>
-                                <option value="3">3 - Perda Total da Espessura da Pele</option>
-                                <option value="4">4 - Lesão Extensa com Exposição Óssea/Muscular</option>
-                                <option value="5">5 - Lesão Não Classificável</option>
-                            </select>
-                        -->
                         </div>
                 </div>
                 <div>
                         <div>
                             <h2>Riscos: </h2>
                             <input type="checkbox" name="risco" value="queda"> Queda
-                            <input type="checkbox" name="risco" value="queda"> Flebite
-                            <input type="checkbox" name="risco" value="queda"> TEV
-                            <input type="checkbox" name="risco" value="lesaoPressao"> Lesão por Pressão
-                            <input type="checkbox" name="risco" value="infeccao"> Infecção
+                            <input type="checkbox" name="risco" value="flebite"> Flebite
+                            <input type="checkbox" name="risco" value="tromboembolismo venoso"> TEV
+                            <input type="checkbox" name="risco" value="lesão por pressão"> Lesão por Pressão
+                            <input type="checkbox" name="risco" value="infecção"> Infecção
                             <input type="checkbox" name="risco" value="broncoaspiracao"> Broncoaspiração
                             <input type="checkbox" name="risco" value="fuga"> fuga
                             <input type="checkbox" name="risco" value="autoexterminio"> Autoextermínio
@@ -293,21 +313,40 @@
                         </div>
                 </div>
                 <div>
-                    <!--
                         <div>
+                            <!--
                             <h2>Curativos: </h2>
-                            <label for="tipodeferida">Tipo de Ferida: </label>
-                            <select name="" id="">
-                                <option value="incisao_cirurgica">Incisão Cirúrgica</option>
-                                <option value="lesao_pressao">Lesão por Pressão</option>
-                                <option value="ulcera_venosa">Úlcera Venosa</option>
-                                <option value="ulcera_arterial">Úlcera Arterial</option>
-                                <option value="ulcera_neuropatica">Úlcera Neuropática</option>
-                                <option value="queimadura">Queimadura</option>
-                                <option value="ferida_traumatica">Ferida Traumática</option>
-                                <option value="ferida_infectada">Ferida Infectada</option>
-                                <option value="ferida_neoplasica">Ferida Neoplásica</option>
-                                <option value="outros">Outros</option>
+                            <label for="haferida">Há ferida? </label>
+                            <select name="haferida" id="haferida">
+                                <option hidden selected disabled>Selecione</option>
+                                <option value="Não">Não</option>
+                                <option value="Sim">Sim</option>
+                            </select>
+                            <div id="tipoFeridaAparecer" style="display: none; margin-top: 10px;">
+                                <label class="aparecer" for="tipodeferida">Tipo de Ferida: </label>
+                                <select class="aparecer" name="tipodeferida" id="tipodeferida">
+                                    <option value="incisao_cirurgica">Incisão Cirúrgica</option>
+                                    <option value="lesao_pressao">Lesão por Pressão</option>
+                                    <option value="ulcera_venosa">Úlcera Venosa</option>
+                                    <option value="ulcera_arterial">Úlcera Arterial</option>
+                                    <option value="ulcera_neuropatica">Úlcera Neuropática</option>
+                                    <option value="queimadura">Queimadura</option>
+                                    <option value="ferida_traumatica">Ferida Traumática</option>
+                                    <option value="ferida_infectada">Ferida Infectada</option>
+                                    <option value="ferida_neoplasica">Ferida Neoplásica</option>
+                                    <option value="outros">Outros</option>
+                                </select>
+                            </div>
+                            <label for="locallesãoporpressão">Local da Lesão por Pressão: </label>
+                            <input type="text" id="localLesaoPressao" name="localLesaoPressao" placeholder="Local da Lesão por Pressão">
+                            <label for="estagio">Estágio da Lesão por Pressão: </label>
+                            <select name="extecaolpp" id="extencaolpp">
+                                <option value="0">0 - Sem Lesão</option>
+                                <option value="1">1 - Eritema Não Desaparece</option>
+                                <option value="2">2 - Perda Parcial da Espessura da Pele</option>
+                                <option value="3">3 - Perda Total da Espessura da Pele</option>
+                                <option value="4">4 - Lesão Extensa com Exposição Óssea/Muscular</option>
+                                <option value="5">5 - Lesão Não Classificável</option>
                             </select>
                             <label for="aspectodaferida">Aspecto da Ferida: </label>
                             <input type="text" id="aspectoferida" placeholder="Descreva o aspecto encontrado">
