@@ -76,6 +76,10 @@ button {
     cursor: pointer;
 }
 
+button:hover {
+    background-color: #3867d6;
+}
+
 section {
     margin-bottom: 20px;
 }
