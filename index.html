@@ -314,7 +314,6 @@
                 </div>
                 <div>
                         <div>
-                            <!--
                             <h2>Curativos: </h2>
                             <label for="haferida">Há ferida? </label>
                             <select name="haferida" id="haferida">
@@ -322,41 +321,43 @@
                                 <option value="Não">Não</option>
                                 <option value="Sim">Sim</option>
                             </select>
-                            <div id="tipoFeridaAparecer" style="display: none; margin-top: 10px;">
+                            <div id="FeridaAparecer" style="display: none; margin-top: 10px;">
                                 <label class="aparecer" for="tipodeferida">Tipo de Ferida: </label>
-                                <select class="aparecer" name="tipodeferida" id="tipodeferida">
-                                    <option value="incisao_cirurgica">Incisão Cirúrgica</option>
-                                    <option value="lesao_pressao">Lesão por Pressão</option>
-                                    <option value="ulcera_venosa">Úlcera Venosa</option>
-                                    <option value="ulcera_arterial">Úlcera Arterial</option>
-                                    <option value="ulcera_neuropatica">Úlcera Neuropática</option>
-                                    <option value="queimadura">Queimadura</option>
-                                    <option value="ferida_traumatica">Ferida Traumática</option>
-                                    <option value="ferida_infectada">Ferida Infectada</option>
-                                    <option value="ferida_neoplasica">Ferida Neoplásica</option>
-                                    <option value="outros">Outros</option>
+                                <select class="aparecer" name="tipoDeFerida" id="tipoDeFerida">
+                                    <option hidden selected disabled>Selecione</option>
+                                    <option value="Presença de incisão cirúrgica">Incisão Cirúrgica</option>
+                                    <option value="Presença de lesão por pressão">Lesão por Pressão</option>
+                                    <option value="Presença de úlcera venosa">Úlcera Venosa</option>
+                                    <option value="Presença de úlcera arterial">Úlcera Arterial</option>
+                                    <option value="Presença de úlcera neuropática">Úlcera Neuropática</option>
+                                    <option value="Presença de queimadura">Queimadura</option>
+                                    <option value="Presença de ferida traumática">Ferida Traumática</option>
+                                    <option value="Presença de ferida infectada">Ferida Infectada</option>
+                                    <option value="Presença de ferida neoplasica">Ferida Neoplásica</option>
+                                </select>
+                                <label for="locallesão">Local da Lesão: </label>
+                                <input type="text" id="localLesao" name="localLesao" placeholder="Local da Lesão">
+                                <label for="aspectodaferida">Aspecto da Ferida: </label>
+                                <input type="text" id="aspectoFerida" placeholder="Descreva o aspecto encontrado">
+                                <label for="materialutilizado">Materiais Utilizados: </label>
+                                <input type="text" id="materiaisUtilizados" placeholder="Gaze, SF0,9%...">
+                            </div>
+                            <div id="extensaolpp" style="display: none; margin-top: 10px;">
+                                <label for="estagio">Estágio da Lesão por Pressão: </label>
+                                <select name="graulpp" id="graulpp">
+                                    <option disabled selected hidden>Selecione</option>
+                                    <option value="Grau 1">1 - Eritema Não Desaparece</option>
+                                    <option value="Grau 2">2 - Perda Parcial da Espessura da Pele</option>
+                                    <option value="Grau 3">3 - Perda Total da Espessura da Pele</option>
+                                    <option value="Grau 4">4 - Lesão Extensa com Exposição Óssea/Muscular</option>
+                                    <option value="Grau 5">5 - Lesão Não Classificável</option>
                                 </select>
                             </div>
-                            <label for="locallesãoporpressão">Local da Lesão por Pressão: </label>
-                            <input type="text" id="localLesaoPressao" name="localLesaoPressao" placeholder="Local da Lesão por Pressão">
-                            <label for="estagio">Estágio da Lesão por Pressão: </label>
-                            <select name="extecaolpp" id="extencaolpp">
-                                <option value="0">0 - Sem Lesão</option>
-                                <option value="1">1 - Eritema Não Desaparece</option>
-                                <option value="2">2 - Perda Parcial da Espessura da Pele</option>
-                                <option value="3">3 - Perda Total da Espessura da Pele</option>
-                                <option value="4">4 - Lesão Extensa com Exposição Óssea/Muscular</option>
-                                <option value="5">5 - Lesão Não Classificável</option>
-                            </select>
-                            <label for="aspectodaferida">Aspecto da Ferida: </label>
-                            <input type="text" id="aspectoferida" placeholder="Descreva o aspecto encontrado">
-                            <label for="materialutilizado">Materiais Utilizados: </label>
-                            <input type="text" id="materiaisutilizados" placeholder="Gaze, SF0,9%...">
                         </div>
-                    -->
             </div>
         </form>   
-        <button type="button" onclick="gerarPDF()">Exportar PDF</button> 
+        <button type="button" onclick="gerarPDF()">Exportar PDF</button>
+        <button id="btnVisualizar" type="button" onclick="visualizarPDF()">Pré-visualização</button>
         </section>
     </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
