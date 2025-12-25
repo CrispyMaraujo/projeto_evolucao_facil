@@ -12,26 +12,26 @@
                 <h2>Preencha os campos abaixo para registrar a evolução do paciente.</h2>
         <section id="cabecalhoSection">
             <div id="cabecalhoDiv">
+                <form class="cabecalhoClass" action="cabecalho">
                 <h2>Identificação do Paciente: </h2>
-                <form action="cabecalho">
-                    <label for="nome">Nome: </label>
-                    <input type="text" id="patientName" name="patientName" placeholder="Nome do Paciente" required>
-                    <label for="idade">Idade: </label>
-                    <input type="number" id="patientAge" name="patientAge" placeholder="Idade do Paciente" required>
-                    <label for="dateevolucao">Data: </label>
-                    <input type="date" id="evolutionDate" name="evolutionDate" required>
-                    <label for="numeroleito">Leito: </label>
-                    <input type="text" id="patientBed" name="patientBed" placeholder="Leito do Paciente" required>
-                    <label for="horaevolucao">Hora: </label>
-                    <input type="time" id="evolutionTime" name="evolutionTime" required>
-                    <label for="dih">DIH: </label>
-                    <input type="number" id="dih" name="dih" placeholder="DIH do Paciente" required>
-                    <label for="Ala">Ala: </label>
-                    <input type="text" name="ala" placeholder="Enfermaria, Centro Cirúrgico..." id="alaPaciente">
+                    <label for="nome">Nome do Paciente: </label>
+                    <input type="text" id="patientName" name="patientName" placeholder="Nome do Paciente" required> <br>
+                    <label for="idade">Idade do Paciente: </label>
+                    <input type="number" id="patientAge" name="patientAge" placeholder="Idade do Paciente" required><br>
+                    <label for="dateevolucao">Data (No momento da avaliação): </label>
+                    <input type="date" id="evolutionDate" name="evolutionDate" required><br>
+                    <label for="horaevolucao">Hora (No momento da avaliação): </label>
+                    <input type="time" id="evolutionTime" name="evolutionTime" required><br>
+                    <label for="numeroleito">Código ou Número do Leito do Paciente: </label>
+                    <input type="text" id="patientBed" name="patientBed" placeholder="Leito do Paciente" required><br>
+                    <label for="dih">Dia(s) de Internação Hospitalar: </label>
+                    <input type="number" id="dih" name="dih" placeholder="DIH do Paciente" required><br>
+                    <label for="Ala">Ala ou Setor: </label>
+                    <input type="text" name="ala" placeholder="Enfermaria, Centro Cirúrgico..." id="alaPaciente"><br>
                 </form>
             </div>
         </section>
-        <form action="evolucao">
+        <form class="evolucaoForm" action="evolucao">
             <section id="neurologicoSection">
                 <div id="neurologicoDiv">
                         <div id="escalaDeComaDeGlasgow">
@@ -71,7 +71,7 @@
                                 <option value="0">Bilateral</option>
                             </select>
                             <label for="pupilas">Pupílas: </label>
-                            <select name="avaliacaoPupilar" id="avaliacaoPupilar">
+                            <select class="avaliacaoPupilar" name="avaliacaoPupilar" id="avaliacaoPupilar">
                                 <option disabled selected hidden >Selecione</option>
                                 <option value="isocóricas">Isocóricas</option>
                                 <option value="Anisocóricas com D>E">Anisocóricas D>E</option>
@@ -79,8 +79,8 @@
                                 <option value="Puntiformes">Puntiformes</option>
                                 <option value="Midriáticas">Midriáticas</option>
                                 <option value="Mióticas">Mióticas</option>
-                            </select>
-                            <select name="reacaoPupilar" id="reacaoPupilar">
+                            </select> <br>
+                            <select class="avaliacaoPupilar" name="reacaoPupilar" id="reacaoPupilar">
                                 <option disabled selected hidden >Selecione</option>
                                 <option value="fotorreagentes">Fotorreagentes</option>
                                 <option value="sem reação a luz estimulante">Não Reagem</option>
@@ -99,6 +99,7 @@
                     </div>
                 </div>
             </section>
+        </form>
             <section id="respiratorioSection">
                 <div id="respiratorioDiv">
                     <h2>Respiratório</h2>

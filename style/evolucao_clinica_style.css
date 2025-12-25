@@ -5,22 +5,54 @@ body {
     padding: 20px;
 }
 
-h1 {
+h1, h2, p {
     text-align: center;
     color: #000000;
 }
 
-p {
-    text-align: center;
-    color: #000000;
+.cabecalhoClass, .evolucaoForm {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    margin: 0 auto;
+    width: 400px;
+    line-height: 1.6;
 }
 
-h2 {
-    color: #000000;
+.cabecalhoClass label, .evolucaoForm label {
+    display: block;
+    margin: 0 auto;
     text-align: center;
+    color: #000000;
+    margin-top: 10px;
+    font-weight: bolder;
 }
 
-form {
+.cabecalhoClass input[type="text"], input[type="number"], input[type="date"], input[type="time"], .evolucaoForm select {
+    width: 380px;
+    padding: 10px;
+    margin-bottom: px;
+    border: 1px solid #000000;
+    border-radius: 4px;
+}
+
+.cabecalhoClass input::placeholder {
+    color: #000000;
+    text-align: center;
+
+}
+
+.avaliacaoPupilar {
+    width: 150px;
+    padding: 10px;
+    margin-bottom: 8px;
+    border: 1px solid #000000;
+    border-radius: 4px;
+}
+
+/*form {
     background-color: #fff;
     padding: 20px;
     border-radius: 5px;
@@ -70,7 +102,7 @@ input[type="checkbox"] {
     vertical-align: middle;
     margin-right: 8px;
     margin-bottom: 10px;
-}
+}*/
 
 button {
     background-color: #007bff;
