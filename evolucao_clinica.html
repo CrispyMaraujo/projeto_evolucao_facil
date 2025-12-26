@@ -31,75 +31,83 @@
                 </form>
             </div>
         </section>
-        <form class="evolucaoForm" action="evolucao">
-            <section id="neurologicoSection">
-                <div id="neurologicoDiv">
-                        <div id="escalaDeComaDeGlasgow">
-                            <h2>Escala de Coma de Glasgow (ECG): </h2>
-                            <label for="ocular">Abertura Ocular: </label>
-                            <select name="ocular" id="ocular">
-                                <option disabled selected hidden>Selecione</option>
-                                <option value="4">Espontânea</option>
-                                <option value="3">À voz</option>
-                                <option value="2">À dor</option>
-                                <option value="1">Nenhuma</option>
-                            </select>
-                            <label for="verbal">Resposta Verbal: </label>
-                            <select name="verbal" id="verbal">
-                                <option disabled selected hidden>Selecione</option>
-                                <option value="5">Orientado</option>
-                                <option value="4">Confuso</option>
-                                <option value="3">Verbaliza palavras soltas</option>
-                                <option value="2">Verbaliza sons</option>
-                                <option value="1">Nenhuma</option>
-                            </select>
-                            <label for="motora">Resposta Motora: </label>
-                            <select name="motora" id="motora">
-                                <option disabled selected hidden>Selecione</option>
-                                <option value="6">Obedece comandos</option>
-                                <option value="5">Localiza estímulos</option>
-                                <option value="4">Flexão normal</option>
-                                <option value="3">Flexão anormal</option>
-                                <option value="2">Extensão anormal</option>
-                                <option value="1">Nenhuma</option>
-                            </select>
-                            <label for="reatividadePupilar">Reatividade Pupilar: </label>
-                            <select name="reatividadePupilar" id="reatividadePupilar">
-                                <option disabled selected hidden>Selecione</option>
-                                <option value="2">Inexistente</option>
-                                <option value="1">Unilateral</option>
-                                <option value="0">Bilateral</option>
-                            </select>
-                            <label for="pupilas">Pupílas: </label>
-                            <select class="avaliacaoPupilar" name="avaliacaoPupilar" id="avaliacaoPupilar">
-                                <option disabled selected hidden >Selecione</option>
-                                <option value="isocóricas">Isocóricas</option>
-                                <option value="Anisocóricas com D>E">Anisocóricas D>E</option>
-                                <option value="Anisocóricas com E>D">Anisocóricas E>D</option>
-                                <option value="Puntiformes">Puntiformes</option>
-                                <option value="Midriáticas">Midriáticas</option>
-                                <option value="Mióticas">Mióticas</option>
-                            </select> <br>
-                            <select class="avaliacaoPupilar" name="reacaoPupilar" id="reacaoPupilar">
-                                <option disabled selected hidden >Selecione</option>
-                                <option value="fotorreagentes">Fotorreagentes</option>
-                                <option value="sem reação a luz estimulante">Não Reagem</option>
-                            </select>
-                        </div>
-                        <div id="sedacaoDiv">
-                            <h2>Sedação: </h2>
-                                <label for="sedation">Sedação: </label>
-                                <select name="avaliacaoSedacao" id="avaliacaoSedacao">
-                                    <option disabled selected hidden >Selecione</option>
-                                    <option value="não sedado">Não Sedado</option>
-                                    <option value="com sedação leve">Leve</option>
-                                    <option value="com sedação moderada">Moderado</option>
-                                    <option value="com sedação profunda">Profundo</option>
-                                </select>
-                    </div>
-                </div>
-            </section>
-        </form>
+                <label class="testeEscala" for="escaladeComadeGlasgow">Escala de Coma de Glasgow:</label>
+                <select name="escaladeComadeGlasgow" id="escaladeComadeGlasgow">
+                    <option hidden selected disabled>Selecionar</option>
+                    <option value="avaliar">Avaliar</option>
+                    <option value="nnavaliar">Não Avaliar</option>
+                </select>
+                <div id="divEscalaGlasgow" style="display: none; margin-top: 10px;">
+                    <form class="evolucaoForm" action="evolucao">
+                        <section id="neurologicoSection">
+                            <div id="neurologicoDiv">
+                                    <div id="escalaDeComaDeGlasgow">
+                                        <h2>Escala de Coma de Glasgow (ECG): </h2>
+                                        <label for="ocular">Abertura Ocular: </label>
+                                        <select name="ocular" id="ocular">
+                                            <option disabled selected hidden>Selecione</option>
+                                            <option value="4">Espontânea</option>
+                                            <option value="3">À voz</option>
+                                            <option value="2">À dor</option>
+                                            <option value="1">Nenhuma</option>
+                                        </select>
+                                        <label for="verbal">Resposta Verbal: </label>
+                                        <select name="verbal" id="verbal">
+                                            <option disabled selected hidden>Selecione</option>
+                                            <option value="5">Orientado</option>
+                                            <option value="4">Confuso</option>
+                                            <option value="3">Verbaliza palavras soltas</option>
+                                            <option value="2">Verbaliza sons</option>
+                                            <option value="1">Nenhuma</option>
+                                        </select>
+                                        <label for="motora">Resposta Motora: </label>
+                                        <select name="motora" id="motora">
+                                            <option disabled selected hidden>Selecione</option>
+                                            <option value="6">Obedece comandos</option>
+                                            <option value="5">Localiza estímulos</option>
+                                            <option value="4">Flexão normal</option>
+                                            <option value="3">Flexão anormal</option>
+                                            <option value="2">Extensão anormal</option>
+                                            <option value="1">Nenhuma</option>
+                                        </select>
+                                        <label for="reatividadePupilar">Reatividade Pupilar: </label>
+                                        <select name="reatividadePupilar" id="reatividadePupilar">
+                                            <option disabled selected hidden>Selecione</option>
+                                            <option value="2">Inexistente</option>
+                                            <option value="1">Unilateral</option>
+                                            <option value="0">Bilateral</option>
+                                        </select>
+                                        <label for="pupilas">Pupílas: </label>
+                                        <select class="avaliacaoPupilar" name="avaliacaoPupilar" id="avaliacaoPupilar">
+                                            <option disabled selected hidden >Selecione</option>
+                                            <option value="isocóricas">Isocóricas</option>
+                                            <option value="Anisocóricas com D>E">Anisocóricas D>E</option>
+                                            <option value="Anisocóricas com E>D">Anisocóricas E>D</option>
+                                            <option value="Puntiformes">Puntiformes</option>
+                                            <option value="Midriáticas">Midriáticas</option>
+                                            <option value="Mióticas">Mióticas</option>
+                                        </select> <br>
+                                        <select class="avaliacaoPupilar" name="reacaoPupilar" id="reacaoPupilar">
+                                            <option disabled selected hidden >Selecione</option>
+                                            <option value="fotorreagentes">Fotorreagentes</option>
+                                            <option value="sem reação a luz estimulante">Não Reagem</option>
+                                        </select>
+                                    </div>
+                                    <div id="sedacaoDiv">
+                                        <h2>Sedação: </h2>
+                                            <label for="sedation">Sedação: </label>
+                                            <select name="avaliacaoSedacao" id="avaliacaoSedacao">
+                                                <option disabled selected hidden >Selecione</option>
+                                                <option value="não sedado">Não Sedado</option>
+                                                <option value="com sedação leve">Leve</option>
+                                                <option value="com sedação moderada">Moderado</option>
+                                                <option value="com sedação profunda">Profundo</option>
+                                            </select>
+                                </div>
+                            </div>
+                        </section>
+                    </form>
+            </div>
             <section id="respiratorioSection">
                 <div id="respiratorioDiv">
                     <h2>Respiratório</h2>

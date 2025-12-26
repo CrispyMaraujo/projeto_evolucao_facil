@@ -322,3 +322,17 @@
             }
             });
       });
+
+      //Seção de captação da div (aparecer e desaparecer) Escala de Coma de Glasgow:
+            document.addEventListener("DOMContentLoaded", function() {
+            const escaladeECG = document.getElementById("escaladeComadeGlasgow");
+            const divEscalaGlasgow = document.getElementById("divEscalaGlasgow");
+            //Validação:
+            escaladeECG.addEventListener("change", function(){
+            if (escaladeECG.value === "avaliar") {
+                  divEscalaGlasgow.style.display = "block";
+            } else {
+                  divEscalaGlasgow.style.display = "none";
+            }
+            });
+      });
